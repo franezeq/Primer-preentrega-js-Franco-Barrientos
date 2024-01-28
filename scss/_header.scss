@@ -1,0 +1,87 @@
+/*HEADER*/
+.logohead {
+    width: 7vh;
+    height: 7vh;
+    padding: 10px;
+}
+/*HEADER BARRA DE NAVEGACION   */
+a{
+    font-style: none;
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+}
+.barraNav {
+    background-color: pink;
+    align-items: center;
+}
+
+.padrelist {
+    list-style: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 90%;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textitem {
+    padding: 5px;
+}
+
+.textitem:hover {
+    border-bottom: 0.3px white solid;
+    color: white;
+    transform: scale(1.2);
+}
+li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+.carrito {
+    width: 6vh;
+    height: 6vh;
+    object-fit: contain;
+    max-width: fit-content;
+    align-items: center;
+    justify-items: end;
+}
+.listItem6:hover{
+    color: white;
+    transform: scale(1.5);
+    filter: invert(100%);
+}
+/*HEADER BUSCADOR   */
+.buscador{
+    background-color: pink;
+    border-bottom: 0.4px black solid;
+    padding: 0px 0 10px 40% ;
+}
+
+#buscar{
+    border-radius: 15px;
+    width: 90vw;
+    max-width: 50%;
+    font-size: 14px;
+    padding: 5px 5px 5px 5px;
+}
+.buscadorItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.textoBuscador{
+    font-size: 20px;
+    padding-right: 15px;
+}

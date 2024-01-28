@@ -1,0 +1,28 @@
+/*footer*/
+.footer {
+    border-top: 3px palevioletred dashed;
+    @include flex (flex, column);
+    justify-content: center;
+    align-content: start;
+  }
+  
+  .divfooter {
+    @include flex (flex, row);
+    align-content: center;
+    margin: 10px auto;
+    padding: 10px;
+  }
+  
+  .foottext {
+    @include estilofuente (lighter, 20px);
+    text-decoration: underline;
+    font-family: 'Roboto Slab', serif;
+    padding-top: 2px;
+    padding-left: 10px;
+  }
+  
+  .imgfooter {
+    @include tamaño (30px, 30px);
+    padding-top: 5px;
+    object-fit: fill;
+  }

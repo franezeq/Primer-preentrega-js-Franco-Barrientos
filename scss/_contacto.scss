@@ -1,0 +1,66 @@
+.contacto-titulo{
+    text-align: center;
+}
+.form1 {
+    grid-area: form1;
+}
+
+.form2 {
+    grid-area: form2;
+}
+
+.form3 {
+    grid-area: form3;
+}
+
+.form5 {
+    grid-area: form5;
+}
+
+.form {
+    display: grid;
+    grid-template-areas: ".... .... form1 .... ...." ". . form2 . ." ". . form3 . ." ". . form4 . ." ". . form5 . ." ". . form6 . .";
+    width: 100%;
+}
+
+.itemform {
+    margin: 1vh 0;
+    font-size: 18px;
+    border: 1px solid $celeste;
+}
+
+.form4 {
+    grid-area: form4;
+    text-align: center;
+    border: none;
+}
+
+.form6 {
+    grid-area: form6;
+    @include flex (flex, row);
+    justify-content: center;
+    border: none;
+}
+
+.motivo,
+option {
+    font-size: 16px;
+}
+
+.formbotones {
+    background-color: $celeste;
+    border-radius: 10px;
+    color: white;
+    @include estilofuente (600, 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+
+    &:hover {
+        background-color: $celeste2;
+    }
+}
+.contacto{
+    margin: 10px 2vw;
+
+}

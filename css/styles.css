@@ -1,0 +1,512 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*HEADER*/
+.logohead {
+  width: 7vh;
+  height: 7vh;
+  padding: 10px;
+}
+
+/*HEADER BARRA DE NAVEGACION   */
+a {
+  font-style: none;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.barraNav {
+  background-color: pink;
+  align-items: center;
+}
+
+.padrelist {
+  list-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  width: 90%;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.textitem {
+  padding: 5px;
+}
+
+.textitem:hover {
+  border-bottom: 0.3px white solid;
+  color: white;
+  transform: scale(1.2);
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carrito {
+  width: 6vh;
+  height: 6vh;
+  object-fit: contain;
+  max-width: fit-content;
+  align-items: center;
+  justify-items: end;
+}
+
+.listItem6:hover {
+  color: white;
+  transform: scale(1.5);
+  filter: invert(100%);
+}
+
+/*HEADER BUSCADOR   */
+.buscador {
+  background-color: pink;
+  border-bottom: 0.4px black solid;
+  padding: 0px 0 10px 40%;
+}
+
+#buscar {
+  border-radius: 15px;
+  width: 90vw;
+  max-width: 50%;
+  font-size: 14px;
+  padding: 5px 5px 5px 5px;
+}
+
+.buscadorItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.textoBuscador {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
+.card {
+  border: 1.5px solid black;
+  width: 15vw;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  justify-content: center;
+  view-timeline-name: --cards;
+  view-timeline-axis: block;
+  animation-timeline: --cards;
+  animation-name: aparecer;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
+.card-img {
+  max-width: 90%;
+  max-height: 50%;
+  height: 15vw;
+  width: 15vw;
+  object-fit: contain;
+  margin: 2px auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.card-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.card-precio-ant {
+  font-weight: 200;
+  text-decoration: line-through;
+  font-size: 1vw;
+}
+
+.card-precio-desc {
+  font-weight: 800;
+  font-size: 1.5vw;
+}
+
+.card-boton {
+  border-radius: 25px;
+  font-size: 1.2vw;
+  margin: 10px 1vw 5px 1vw;
+  transition: transform 0.1s linear;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  background-color: #4FA8C2;
+}
+
+.card-boton:hover {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+  transform: scale(1.1);
+  background-color: #65c5e1;
+}
+
+.card-text {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/*GRILLA CARDS*/
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 30px 15%;
+}
+
+/*HOME*/
+.subhome {
+  font-size: 25px;
+  text-align: center;
+  text-decoration: underline;
+  margin: 1vw auto;
+}
+
+.titulo {
+  font-size: 30px;
+  text-align: center;
+  margin: 1vw auto;
+}
+
+.img-principal-padre {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-principal {
+  max-width: 80%;
+  width: 900px;
+  height: auto;
+  margin: auto;
+}
+
+/*Animacion grilla*/
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    scale: 0%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+.contacto-titulo {
+  text-align: center;
+}
+
+.form1 {
+  grid-area: form1;
+}
+
+.form2 {
+  grid-area: form2;
+}
+
+.form3 {
+  grid-area: form3;
+}
+
+.form5 {
+  grid-area: form5;
+}
+
+.form {
+  display: grid;
+  grid-template-areas: ".... .... form1 .... ...." ". . form2 . ." ". . form3 . ." ". . form4 . ." ". . form5 . ." ". . form6 . .";
+  width: 100%;
+}
+
+.itemform {
+  margin: 1vh 0;
+  font-size: 18px;
+  border: 1px solid #4FA8C2;
+}
+
+.form4 {
+  grid-area: form4;
+  text-align: center;
+  border: none;
+}
+
+.form6 {
+  grid-area: form6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: none;
+}
+
+.motivo,
+option {
+  font-size: 16px;
+}
+
+.formbotones {
+  background-color: #4FA8C2;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.formbotones:hover {
+  background-color: #65c5e1;
+}
+
+.contacto {
+  margin: 10px 2vw;
+}
+
+.quienessomos {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 200;
+  margin: 25px auto;
+}
+
+.mainquienes, .maincatalogo, .mainpromo {
+  margin-bottom: 30px;
+}
+
+.eslogan {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 23px;
+  text-decoration: underline;
+}
+
+.quienessomos-titulo {
+  text-align: center;
+  font-size: 30px;
+  margin: 1.5vw auto;
+  text-decoration: underline;
+}
+
+.quienes {
+  margin: 15px 2vw;
+}
+
+.whatsapp {
+  width: 100px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+/*footer*/
+.footer {
+  border-top: 3px palevioletred dashed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: start;
+}
+
+.divfooter {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.foottext {
+  font-weight: lighter;
+  font-size: 20px;
+  text-decoration: underline;
+  font-family: "Roboto Slab", serif;
+  padding-top: 2px;
+  padding-left: 10px;
+}
+
+.imgfooter {
+  width: 30px;
+  height: 30px;
+  padding-top: 5px;
+  object-fit: fill;
+}
+
+@media (min-width: 425px) and (max-width: 990px) {
+  .padrelist {
+    font-size: 11px;
+  }
+  .textoBuscador {
+    font-size: 15px;
+  }
+  .buscador-input {
+    font-size: 10px;
+  }
+  .card-body p {
+    font-size: 16px;
+  }
+  .card-img {
+    width: 160px;
+    height: auto;
+  }
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card {
+    width: 60%;
+    height: auto;
+    margin: auto;
+  }
+  .card-precio-ant {
+    font-size: 15px;
+  }
+  .card-precio-desc {
+    font-size: 20px;
+  }
+  .card-boton {
+    font-size: 20px;
+  }
+  .quienes p {
+    font-size: 17px;
+  }
+  .whatsapp {
+    width: 60px;
+    height: auto;
+  }
+}
+@media (min-width: 1px) and (max-width: 424px) {
+  .header {
+    width: auto;
+    max-width: 100%;
+  }
+  .logohead {
+    width: 15vw;
+    height: auto;
+  }
+  .carrito {
+    width: 10vw;
+    height: auto;
+  }
+  .padrelist li {
+    margin: 2px;
+    padding: 0;
+  }
+  .padrelist {
+    font-size: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 15px;
+  }
+  .textoBuscador {
+    font-size: 10px;
+  }
+  .buscador-input {
+    font-size: 10px;
+  }
+  .buscadorItem {
+    justify-content: start;
+    align-items: center;
+  }
+  .buscador {
+    font-size: 10px;
+    justify-content: center;
+    padding-left: 10%;
+    max-width: 90vh;
+  }
+  #buscar {
+    width: 50%;
+  }
+  .card-body p {
+    font-size: 16px;
+  }
+  .card-img {
+    width: 160px;
+    height: auto;
+  }
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card {
+    width: 90%;
+    height: auto;
+    margin: 5px auto;
+  }
+  .card-precio-ant {
+    font-size: 15px;
+  }
+  .card-precio-desc {
+    font-size: 20px;
+  }
+  .card-boton {
+    font-size: 15px;
+  }
+  .quienes p {
+    font-size: 13px;
+  }
+  .quienes {
+    text-align: center;
+    margin: auto 10px;
+  }
+  .whatsapp {
+    width: 50px;
+    height: auto;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+  }
+  .subhome {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .titulo {
+    font-size: 25px;
+  }
+  .form {
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .divfooter p {
+    font-size: 15px;
+  }
+  .divfooter img {
+    width: 15px;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

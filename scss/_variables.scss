@@ -1,0 +1,23 @@
+$celeste: #4FA8C2;
+$celeste2: #65c5e1;
+
+@mixin tamaño ($alto, $ancho) {
+    width: $ancho;
+    height: $alto;
+
+}
+
+
+@mixin flex ($display, $direccion) {
+    display: $display;
+    flex-direction: $direccion;
+}
+@mixin ordenflex ($alignitem, $justifycontent) {
+    align-items: $alignitem;
+    justify-content: $justifycontent;
+}
+
+@mixin estilofuente ($weight, $size) {
+    font-weight: $weight;
+    font-size: $size;
+}
