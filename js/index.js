@@ -1,5 +1,5 @@
 //INICIAR SESION
-let usuario = "franco"
+/*let usuario = "franco"
 let contrasenia = "entrar"
 while (true) {
   usuario = prompt("ingrese su usuario");
@@ -13,7 +13,8 @@ while (true) {
   }
 }
 console.log(alert("Bienvenido franco"))
-
+*/
+/*
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
 let cantProductos = 0;
 while (true) {
@@ -90,7 +91,54 @@ else if (cuotas == "6") {
   console.log("el precio a pagar es de $" + (parseInt(+final * 1.25)) + "(25% de interes con el medio de pago seleccionado)");
 }
 else if (cuotas == "1") {
-  console.log("el precio a pagar es de $" + final+""+"sin intereses");
+  console.log("el precio a pagar es de $" + final + "" + "sin intereses");
 }
 else { console.log("numero de cuotas invalido"); }
+*/
+/*
+stock = 0;
+final = 0;
+class Productos {
+  constructor(titulo, precio, stock) {
+    this.titulo = titulo;
+    this.precio = parseFloat(precio);
+    this.stock = stock;
+    this.precioConIva = function () {
+      let final = this.precio * 1.21;
+      return "$" + final;
+    }
+  }
+  vender() {
+    this.stock--;
+  }
+}
+const mochilaBoca = new Productos("Mochila de Boca", 1200, 10);
+const mateRojo = new Productos("Mate Rojo", 870, 3);
+mochilaBoca.vender();
 
+mochilaBoca.precioConIva();
+console.log(mochilaBoca.precioConIva());
+console.log(mochilaBoca);
+console.log(mateRojo);
+mateRojo.vender();
+console.log(mateRojo);
+*/
+const PRODUCTOS = [
+  { titulo: "Mochila de Boca", precio: 1200, stock: 8 },
+  { titulo: "Mate rojo", precio: 700, stock: 3 },
+  { titulo: "Cartera Las Oreiro", precio: 6000, stock: 2 },
+  { titulo: "Mochila de river", precio: 1100, stock: 15 },
+]
+// FILTRO DE BUSQUEDA PARA INPUT
+ const search = (letra) => {
+   return PRODUCTOS.filter(item => {
+    return item.titulo.includes(letra)
+  })
+}
+cosole.log(search("Mochila"));
+
+// ORDENAR DE MAYOR A MENOR PARA FILTRO DE BUSQUEDA
+PRODUCTOS.sort(function(a,b){
+  return b.precio - a.precio;
+})
+console.log(PRODUCTOS);
