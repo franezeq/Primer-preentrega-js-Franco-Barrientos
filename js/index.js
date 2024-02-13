@@ -102,10 +102,13 @@ else { console.log("numero de cuotas invalido"); }
 
 //SEGUNDA PRE ENTREGA
 class Productos {
-  constructor(titulo, precio, stock) {
+  constructor(imagen, titulo, descripcion, precio, stock, alt) {
+    this.imagen = imagen;
     this.titulo = titulo;
+    this.descripcion = descripcion;
     this.precio = parseFloat(precio);
     this.stock = stock;
+    this.alt = alt;
     this.precioConIva = function () {
       let final = this.precio * 1.21;
       return "$" + final;
@@ -115,39 +118,34 @@ class Productos {
     this.stock--;
   }
 }
-const mateRojo = new Productos("Mate Rojo", 2040, 3);
-const billeteraMarron = new Productos("Billetera Marron", 4000, 7);
-const billeteraNegra = new Productos("Billetera Negra", 3000, 9);
-const camionJuguete = new Productos("Camion", 2550, 10);
-const carteraChimola = new Productos("Chimola", 6200, 3);
-const dinosaurio = new Productos("Dinosaurio", 2000, 11);
-const cartucheraFooty = new Productos("Footy", 4000, 20);
-const esmalteAurora = new Productos("Esmalte Disney", 2040, 3);
-const cartucheraGamer = new Productos("Cartuchera Gamer", 3240, 11);
-const luncheraMickey = new Productos("Lunchera de Mickey Mouse", 5120, 2);
-const pawPatrol = new Productos("Jabon de Paw Patrol", 2100, 5);
+
+
+//Ingreso de objetos en un Array
+const PRODUCTOS = [
+  mateRojo = new Productos(src = "../img/MateRojo.jpg", "Mate Rojo", "Mate color rojo con bombilla saca yerba.", 2040, 3, "Mate color rojo con bombilla saca yerba."),
+  billeteraMarron = new Productos("../img/Billetera1.jpg", "Billetera Marron", "Billetera marron de cuero.", 4000, 7, "Billetera marron de cuero."),
+  billeteraNegra = new Productos("../img/Billetera2.jpg", "Billetera Negra", "Billetera de cuero negra.", 3000, 9, "Billetera de cuero negra."),
+  camionJuguete = new Productos("../img/camion.webp", "Camion", "Camion de juguete", 2550, 10, "Camion de juguete"),
+  carteraChimola = new Productos("../img/CarteraVerdeCuero.jpg", "Chimola", "Cartera color verde de cuero, marca Chimola", 6200, 3, "Cartera color verde de cuero, marca Chimola"),
+  dinosaurio = new Productos("../img/dino.webp", "Dinosaurio", "Dinosaurio de juguete", 2000, 11, "Dinosaurio de juguete"),
+  cartucheraFooty = new Productos("../img/CartucheraFooty1Piso.jpg", "Footy", "Cartuchera infantil de 1 piso", 4000, 20, "Cartuchera infantil de 1 piso"),
+  esmalteAurora = new Productos("../img/esmalteaurora.png", "Esmalte Disney", "Esmalte de aurora", 1340, 3, "Esmalte de aurora"),
+  cartucheraGamer = new Productos("../img/CartucheraGamer2cierres.png", "Cartuchera Gamer", "Cartuchera infantil", 3240, 11, "Cartuchera infantil"),
+  luncheraMickey = new Productos("../img/LuncheraMickeypng.jpg", "Lunchera de Mickey Mouse", "Lunchera infantil de Mickey Mouse.", 5120, 2, "Lunchera infantil de Mickey Mouse."),
+  pawPatrol = new Productos("../img/jabonpawpatrol.jpg", "Jabon de Paw Patrol", "Jabon liquido de Paw Patrol", 2100, 5, "Jabon liquido de Paw Patrol"),
+  setComida = new Productos("../img/JuegoComidax5.jpg", "Set de comida", "Set de Comida infantil para jugar", 3310, 5, "Set de Comida infantil para jugar")
+]
 
 
 
 
+//prueba de funcion Vender y funcion PrecioConIva
 
-//ARRAY que contiene los Objetos
-const PRODUCTOS = [mateRojo,
-  billeteraMarron,
-  billeteraNegra,
-  camionJuguete,
-  carteraChimola,
-  dinosaurio,
-  cartucheraFooty,
-  esmalteAurora,
-  cartucheraGamer,
-  luncheraMickey,
-  pawPatrol];
 
-console.log(billeteraMarron);
-billeteraMarron.vender();
-billeteraMarron.precioConIva();
-console.log(billeteraMarron);  //Stock billetera con 1 unidad vendida
+console.log(dinosaurio);
+dinosaurio.vender();
+console.log(dinosaurio.precioConIva());
+console.log(dinosaurio);  //Stock billetera con 1 unidad vendida
 
 console.log(billeteraMarron.precioConIva());
 console.log(billeteraMarron);
@@ -158,11 +156,13 @@ console.log(mateRojo); //Stock Mate Rojo con 1 unidad venidida
 
 
 // FILTRO DE BUSQUEDA PARA INPUT
+
 const search = (letra) => {
   return PRODUCTOS.filter(item => {
     return item.titulo.includes(letra)
   })
 }
+
 console.log(search("Lunchera"));
 
 // ORDENAR DE MAYOR A MENOR PARA FILTRO DE BUSQUEDA
@@ -173,7 +173,7 @@ PRODUCTOS.sort(function (a, b) {
 console.log(PRODUCTOS);
 
 //Ordenar alfabeticamente
-PRODUCTOS.sort(function (a, b) {
+/*PRODUCTOS.sort(function (a, b) {
   const nombreA = a.titulo.toLocaleLowerCase();
   const nombreB = b.titulo.toLowerCase();
 
@@ -185,5 +185,36 @@ PRODUCTOS.sort(function (a, b) {
   }
   return 0;
 })
+console.log(PRODUCTOS);
+*/
+
+//CARDS
+const contenedorCards = document.getElementById("productos-container");
+function agregarCards(products) {
+  products.forEach(PRODUCTOS => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+ <img src="${PRODUCTOS.imagen}" class="card-img" alt="${PRODUCTOS.alt}">
+                <div class="card-body">
+                    <h4 class="card-title">${PRODUCTOS.titulo}</h4>
+                    <p class="card-text">${PRODUCTOS.descripcion}</p>
+                    <div class="card-desc">
+                        <h3 class="card-precio-desc">$ ${PRODUCTOS.precio}</h3>
+                    </div>
+                    <button type="button" class="card-boton">
+                        Comprar
+                    </button>
+                </div>
+    `
+    contenedorCards.appendChild(card);
+  });
+}
+
+agregarCards(PRODUCTOS);
+
+
+
+
 
 
