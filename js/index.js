@@ -14,8 +14,12 @@ while (true) {
 }
 console.log(alert("Bienvenido franco"))
 */
-/*
+//ARRAY de productos
+
+
+
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
+/*
 let cantProductos = 0;
 while (true) {
   cantProductos = prompt("¿Cuantos productos encargó?");
@@ -43,7 +47,6 @@ let total = (productosIva(cantProductos));
 
 //Agregar mas productos
 let agregar = prompt("Desea agregar mas productos? si o no");
-
 function conMas() {
   if (agregar == "si" || agregar == "SI") {
     let cuantos = prompt("Cuanto desea?");
@@ -74,8 +77,8 @@ while (true) {
 
 
 while (true) {
-  cuotas = prompt("en cuantas cuotas? solo 3 y 6");
-  if (cuotas == "3" || cuotas == "6" || cuotas == "1") {
+  cuotas = prompt("en cuantas cuotas? solo 1, 3 y 6");
+  if (cuotas === "3" || cuotas === "6" || cuotas === "1") {
     break;
   }
   else {
@@ -83,6 +86,7 @@ while (true) {
     continue;
   }
 }
+
 
 if (cuotas == "3") {
   console.log("el precio a pagar es de $" + (parseInt(+final * 1.10)) + "(10% de interes con el medio de pago seleccionado)");
@@ -95,9 +99,8 @@ else if (cuotas == "1") {
 }
 else { console.log("numero de cuotas invalido"); }
 */
-/*
-stock = 0;
-final = 0;
+
+//SEGUNDA PRE ENTREGA
 class Productos {
   constructor(titulo, precio, stock) {
     this.titulo = titulo;
@@ -112,33 +115,75 @@ class Productos {
     this.stock--;
   }
 }
-const mochilaBoca = new Productos("Mochila de Boca", 1200, 10);
-const mateRojo = new Productos("Mate Rojo", 870, 3);
-mochilaBoca.vender();
+const mateRojo = new Productos("Mate Rojo", 2040, 3);
+const billeteraMarron = new Productos("Billetera Marron", 4000, 7);
+const billeteraNegra = new Productos("Billetera Negra", 3000, 9);
+const camionJuguete = new Productos("Camion", 2550, 10);
+const carteraChimola = new Productos("Chimola", 6200, 3);
+const dinosaurio = new Productos("Dinosaurio", 2000, 11);
+const cartucheraFooty = new Productos("Footy", 4000, 20);
+const esmalteAurora = new Productos("Esmalte Disney", 2040, 3);
+const cartucheraGamer = new Productos("Cartuchera Gamer", 3240, 11);
+const luncheraMickey = new Productos("Lunchera de Mickey Mouse", 5120, 2);
+const pawPatrol = new Productos("Jabon de Paw Patrol", 2100, 5);
 
-mochilaBoca.precioConIva();
-console.log(mochilaBoca.precioConIva());
-console.log(mochilaBoca);
+
+
+
+
+//ARRAY que contiene los Objetos
+const PRODUCTOS = [mateRojo,
+  billeteraMarron,
+  billeteraNegra,
+  camionJuguete,
+  carteraChimola,
+  dinosaurio,
+  cartucheraFooty,
+  esmalteAurora,
+  cartucheraGamer,
+  luncheraMickey,
+  pawPatrol];
+
+console.log(billeteraMarron);
+billeteraMarron.vender();
+billeteraMarron.precioConIva();
+console.log(billeteraMarron);  //Stock billetera con 1 unidad vendida
+
+console.log(billeteraMarron.precioConIva());
+console.log(billeteraMarron);
 console.log(mateRojo);
 mateRojo.vender();
-console.log(mateRojo);
-*/
-const PRODUCTOS = [
-  { titulo: "Mochila de Boca", precio: 1200, stock: 8 },
-  { titulo: "Mate rojo", precio: 700, stock: 3 },
-  { titulo: "Cartera Las Oreiro", precio: 6000, stock: 2 },
-  { titulo: "Mochila de river", precio: 1100, stock: 15 },
-]
+console.log(mateRojo); //Stock Mate Rojo con 1 unidad venidida
+
+
+
 // FILTRO DE BUSQUEDA PARA INPUT
- const search = (letra) => {
-   return PRODUCTOS.filter(item => {
+const search = (letra) => {
+  return PRODUCTOS.filter(item => {
     return item.titulo.includes(letra)
   })
 }
-cosole.log(search("Mochila"));
+console.log(search("Lunchera"));
 
 // ORDENAR DE MAYOR A MENOR PARA FILTRO DE BUSQUEDA
-PRODUCTOS.sort(function(a,b){
+PRODUCTOS.sort(function (a, b) {
   return b.precio - a.precio;
 })
+
 console.log(PRODUCTOS);
+
+//Ordenar alfabeticamente
+PRODUCTOS.sort(function (a, b) {
+  const nombreA = a.titulo.toLocaleLowerCase();
+  const nombreB = b.titulo.toLowerCase();
+
+  if (nombreA < nombreB) {
+    return -1
+  }
+  if (nombreA > nombreB) {
+    return 1
+  }
+  return 0;
+})
+
+
