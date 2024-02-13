@@ -1,10 +1,27 @@
-//INICIAR SESION
-let usuario = "franco"
-let contrasenia = "entrar"
+
+//ARRAY de USUARIOS (AGREGADO PARA LA SEGUNDA ENTREGA)
+class Usuarios {
+  constructor(usuario,contrasenia) {
+    this.usuario = usuario;
+    this.contrasenia = contrasenia;
+    }
+  }
+
+const USUARIOS=[
+  franco= new Usuarios("franco","entrar"),
+  mica= new Usuarios("mica","mika")
+]
+console.log(USUARIOS);
+//INICIAR SESION, VERIFICAR ARRAY Y RETORNAR TRUE or FALSE (AGREGADO PARA LA SEGUNDA ENTREGA)
+let user;
+let pw;
+let verificar;
 while (true) {
-  usuario = prompt("ingrese su usuario");
-  contrasenia = prompt("ingrese su contraseña");
-  if (usuario == "franco" && contrasenia == "entrar") {
+  let user = prompt("ingrese su usuario");
+  let pw = prompt("ingrese su contraseña");
+  verificar = !!USUARIOS.find(persona=> persona.usuario === user && persona.contrasenia === pw);
+  if (verificar){
+    console.log("Bienvenido/a"+" "+user);
     break;
   }
   else {
@@ -12,9 +29,6 @@ while (true) {
     continue;
   }
 }
-console.log("Bienvenido franco");
-
-//ARRAY de productos
 
 
 
