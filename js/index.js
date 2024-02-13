@@ -1,5 +1,5 @@
 //INICIAR SESION
-/*let usuario = "franco"
+let usuario = "franco"
 let contrasenia = "entrar"
 while (true) {
   usuario = prompt("ingrese su usuario");
@@ -12,14 +12,14 @@ while (true) {
     continue;
   }
 }
-console.log(alert("Bienvenido franco"))
-*/
+console.log("Bienvenido franco");
+
 //ARRAY de productos
 
 
 
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
-/*
+
 let cantProductos = 0;
 while (true) {
   cantProductos = prompt("¿Cuantos productos encargó?");
@@ -63,7 +63,7 @@ console.log("el precio final a pagar es de $" + parseInt(final));
 
 //TARJETA DE CREDITO
 
-let cuotas = 0;
+
 while (true) {
   let tarjeta = prompt("ingrese que tarjeta usaria (VISA O MASTERCARD)");
   if (tarjeta == "visa" || tarjeta == "mastercard") {
@@ -74,31 +74,30 @@ while (true) {
     continue;
   }
 }
-
-
-while (true) {
+let cuotas = 0;
+function tarjetas() {
   cuotas = prompt("en cuantas cuotas? solo 1, 3 y 6");
-  if (cuotas === "3" || cuotas === "6" || cuotas === "1") {
-    break;
+  switch (cuotas) {
+    case "1":
+      console.log("el precio a pagar es de $" + final + "" + "sin intereses");
+      break;
+    case "3":
+      console.log("el precio a pagar es de $" + (parseInt(+final * 1.10)) + "(10% de interes con el medio de pago seleccionado)");
+      break;
+    case "6":
+      console.log("el precio a pagar es de $" + (parseInt(+final * 1.25)) + "(25% de interes con el medio de pago seleccionado)");
+      break;
+    default:
+      console.log("numero de cuotas invalido, vuelva a intentar");
+      tarjetas();
+      break;
   }
-  else {
-    console.log("el dato no es valido");
-    continue;
-  }
+}
+tarjetas();
+if (cuotas == false) {
+  tarjetas();
 }
 
-
-if (cuotas == "3") {
-  console.log("el precio a pagar es de $" + (parseInt(+final * 1.10)) + "(10% de interes con el medio de pago seleccionado)");
-}
-else if (cuotas == "6") {
-  console.log("el precio a pagar es de $" + (parseInt(+final * 1.25)) + "(25% de interes con el medio de pago seleccionado)");
-}
-else if (cuotas == "1") {
-  console.log("el precio a pagar es de $" + final + "" + "sin intereses");
-}
-else { console.log("numero de cuotas invalido"); }
-*/
 
 //SEGUNDA PRE ENTREGA
 class Productos {
@@ -111,7 +110,7 @@ class Productos {
     this.alt = alt;
     this.precioConIva = function () {
       let final = this.precio * 1.21;
-      return "$" + final;
+      return "$" + parseInt(final);
     }
   }
   vender() {
@@ -200,7 +199,7 @@ function agregarCards(products) {
                     <h4 class="card-title">${PRODUCTOS.titulo}</h4>
                     <p class="card-text">${PRODUCTOS.descripcion}</p>
                     <div class="card-desc">
-                        <h3 class="card-precio-desc">$ ${PRODUCTOS.precio}</h3>
+                        <h3 class="card-precio-desc">${PRODUCTOS.precioConIva()}</h3>
                     </div>
                     <button type="button" class="card-boton">
                         Comprar
@@ -212,9 +211,4 @@ function agregarCards(products) {
 }
 
 agregarCards(PRODUCTOS);
-
-
-
-
-
 
