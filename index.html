@@ -17,12 +17,13 @@
                 <li class="listItem3"><img src="img/logopng.png" alt="Logo de Meraki" class="logohead"></li>
                 <li class="textitem listItem4"><a href="#quienes">Sobre nosotros</a></li>
                 <li class="textitem listItem5">Iniciar Sesión</li>
-                <li class="listItem6"><img src="img/carrito.png" alt="Carrito de compras" class="carrito"></li>
+                <li class="listItem6"><a href="html/carrito.html"><img src="img/carrito.png" alt="Carrito de compras"
+                            class="carrito"></a></li>
             </ul>
             <form action="" class="buscador">
                 <label for="buscar" class="buscadorItem">
                     <h2 class="textoBuscador buscadorItem">Buscar</h2><input type="text" name="buscador" id="buscar"
-                        class="buscador-input" class="formularioBuscador">
+                        class="buscador-input" class="formularioBuscador"><button value="Buscar">BUSCAR</button>
                     </input>
                 </label>
             </form>
@@ -42,6 +43,16 @@
         <section class="card-grid">
             <section id="productos-container" class="container card-grid"></section>
         </section>
+        <div id="carrito" class="carro">
+            <h2>Mi carrito</h2>
+            <ul id="mi-carrito">
+
+            </ul>
+            <button id="btn-comprar">CONFIRMAR</button>
+            <p>Total:<span id="total">0</span></p>
+            <div id="error"></div>
+        </div>
+
 
         <section><a name="contacto"></a>
             <h2 class="contacto-titulo">Contacto</h2>

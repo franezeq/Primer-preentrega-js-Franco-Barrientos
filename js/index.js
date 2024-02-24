@@ -1,18 +1,19 @@
 
 //ARRAY de USUARIOS (AGREGADO PARA LA SEGUNDA ENTREGA)
 class Usuarios {
-  constructor(usuario,contrasenia) {
+  constructor(usuario, contrasenia) {
     this.usuario = usuario;
     this.contrasenia = contrasenia;
-    }
   }
+}
 
-const USUARIOS=[
-  franco= new Usuarios("franco","entrar"),
-  mica= new Usuarios("mica","mika")
+const USUARIOS = [
+  franco = new Usuarios("franco", "entrar"),
+  mica = new Usuarios("mica", "mika")
 ]
 console.log(USUARIOS);
 //INICIAR SESION, VERIFICAR ARRAY Y RETORNAR TRUE or FALSE (AGREGADO PARA LA SEGUNDA ENTREGA)
+/*
 let user;
 let pw;
 let verificar;
@@ -112,10 +113,13 @@ if (cuotas == false) {
   tarjetas();
 }
 
-
+*/
 //SEGUNDA PRE ENTREGA
+let conIva;
+let precioConIva = 0;
 class Productos {
-  constructor(imagen, titulo, descripcion, precio, stock, alt) {
+  constructor(id, imagen, titulo, descripcion, precio, stock, alt, conIva) {
+    this.id = id;
     this.imagen = imagen;
     this.titulo = titulo;
     this.descripcion = descripcion;
@@ -123,8 +127,8 @@ class Productos {
     this.stock = stock;
     this.alt = alt;
     this.precioConIva = function () {
-      let final = this.precio * 1.21;
-      return "$" + parseInt(final);
+      return parseInt(this.precio * 1.21);
+
     }
   }
   vender() {
@@ -135,18 +139,18 @@ class Productos {
 
 //Ingreso de objetos en un Array
 const PRODUCTOS = [
-  mateRojo = new Productos(src = "../img/MateRojo.jpg", "Mate Rojo", "Mate color rojo con bombilla saca yerba.", 2040, 3, "Mate color rojo con bombilla saca yerba."),
-  billeteraMarron = new Productos("../img/Billetera1.jpg", "Billetera Marron", "Billetera marron de cuero.", 4000, 7, "Billetera marron de cuero."),
-  billeteraNegra = new Productos("../img/Billetera2.jpg", "Billetera Negra", "Billetera de cuero negra.", 3000, 9, "Billetera de cuero negra."),
-  camionJuguete = new Productos("../img/camion.webp", "Camion", "Camion de juguete", 2550, 10, "Camion de juguete"),
-  carteraChimola = new Productos("../img/CarteraVerdeCuero.jpg", "Chimola", "Cartera color verde de cuero, marca Chimola", 6200, 3, "Cartera color verde de cuero, marca Chimola"),
-  dinosaurio = new Productos("../img/dino.webp", "Dinosaurio", "Dinosaurio de juguete", 2000, 11, "Dinosaurio de juguete"),
-  cartucheraFooty = new Productos("../img/CartucheraFooty1Piso.jpg", "Footy", "Cartuchera infantil de 1 piso", 4000, 20, "Cartuchera infantil de 1 piso"),
-  esmalteAurora = new Productos("../img/esmalteaurora.png", "Esmalte Disney", "Esmalte de aurora", 1340, 3, "Esmalte de aurora"),
-  cartucheraGamer = new Productos("../img/CartucheraGamer2cierres.png", "Cartuchera Gamer", "Cartuchera infantil", 3240, 11, "Cartuchera infantil"),
-  luncheraMickey = new Productos("../img/LuncheraMickeypng.jpg", "Lunchera de Mickey Mouse", "Lunchera infantil de Mickey Mouse.", 5120, 2, "Lunchera infantil de Mickey Mouse."),
-  pawPatrol = new Productos("../img/jabonpawpatrol.jpg", "Jabon de Paw Patrol", "Jabon liquido de Paw Patrol", 2100, 5, "Jabon liquido de Paw Patrol"),
-  setComida = new Productos("../img/JuegoComidax5.jpg", "Set de comida", "Set de Comida infantil para jugar", 3310, 5, "Set de Comida infantil para jugar")
+  mateRojo = new Productos(1, src = "../img/MateRojo.jpg", "Mate Rojo", "Mate color rojo con bombilla saca yerba.", 2040, 3, "Mate color rojo con bombilla saca yerba."),
+  billeteraMarron = new Productos(2, src = "../img/Billetera1.jpg", "Billetera Marron", "Billetera marron de cuero.", 4000, 7, "Billetera marron de cuero."),
+  billeteraNegra = new Productos(3, "../img/Billetera2.jpg", "Billetera Negra", "Billetera de cuero negra.", 3000, 9, "Billetera de cuero negra."),
+  camionJuguete = new Productos(4, "../img/camion.webp", "Camion", "Camion de juguete", 2550, 10, "Camion de juguete"),
+  carteraChimola = new Productos(5, "../img/CarteraVerdeCuero.jpg", "Chimola", "Cartera color verde de cuero, marca Chimola", 6200, 3, "Cartera color verde de cuero, marca Chimola"),
+  dinosaurio = new Productos(6, "../img/dino.webp", "Dinosaurio", "Dinosaurio de juguete", 2000, 11, "Dinosaurio de juguete"),
+  cartucheraFooty = new Productos(7, "../img/CartucheraFooty1Piso.jpg", "Footy", "Cartuchera infantil de 1 piso", 4000, 20, "Cartuchera infantil de 1 piso"),
+  esmalteAurora = new Productos(8, "../img/esmalteaurora.png", "Esmalte Disney", "Esmalte de aurora", 1340, 3, "Esmalte de aurora"),
+  cartucheraGamer = new Productos(9, "../img/CartucheraGamer2cierres.png", "Cartuchera Gamer", "Cartuchera infantil", 3240, 11, "Cartuchera infantil"),
+  luncheraMickey = new Productos(10, "../img/LuncheraMickeypng.jpg", "Lunchera de Mickey Mouse", "Lunchera infantil de Mickey Mouse.", 5120, 2, "Lunchera infantil de Mickey Mouse."),
+  pawPatrol = new Productos(11, "../img/jabonpawpatrol.jpg", "Jabon de Paw Patrol", "Jabon liquido de Paw Patrol", 2100, 5, "Jabon liquido de Paw Patrol"),
+  setComida = new Productos(12, "../img/JuegoComidax5.jpg", "Set de comida", "Set de Comida infantil para jugar", 3310, 5, "Set de Comida infantil para jugar")
 ]
 
 
@@ -172,11 +176,14 @@ console.log(mateRojo); //Stock Mate Rojo con 1 unidad venidida
 
 const search = (letra) => {
   return PRODUCTOS.filter(item => {
-    return item.titulo.includes(letra)
+    return item.titulo.toLowerCase().includes(letra.toLowerCase())
   })
+  
+  
 }
 
-console.log(search("Lunchera"));
+const buscadorFuncional = document.getElementById("buscar");
+buscadorFuncional.addEventListener("input", () => console.log(search(buscadorFuncional.value)));
 
 // ORDENAR DE MAYOR A MENOR PARA FILTRO DE BUSQUEDA
 PRODUCTOS.sort(function (a, b) {
@@ -201,6 +208,14 @@ console.log(PRODUCTOS);
 console.log(PRODUCTOS);
 */
 
+
+
+
+const miCarrito = [];
+const contenedorElementosCarrito = document.getElementById('mi-carrito');
+const totalSpan = document.getElementById('total');
+
+
 //CARDS
 const contenedorCards = document.getElementById("productos-container");
 function agregarCards(products) {
@@ -213,16 +228,95 @@ function agregarCards(products) {
                     <h4 class="card-title">${PRODUCTOS.titulo}</h4>
                     <p class="card-text">${PRODUCTOS.descripcion}</p>
                     <div class="card-desc">
-                        <h3 class="card-precio-desc">${PRODUCTOS.precioConIva()}</h3>
+                        <h3 class="card-precio-desc">$${PRODUCTOS.precioConIva()}</h3>
                     </div>
-                    <button type="button" class="card-boton">
-                        Comprar
+                    <button type="button" class="card-boton btn-comprar" data-id="${PRODUCTOS.id}">
+                       Agregar
                     </button>
                 </div>
     `
+
     contenedorCards.appendChild(card);
   });
 }
 
+//agregar al carro
+function AgregarAlCarro(idProducto) {
+  const itemExistente = miCarrito.find(item => item.id === idProducto);
+  if (itemExistente) {
+    itemExistente.cantidad++
+  }
+  else {
+    const producto = PRODUCTOS.find(p => p.id === idProducto);
+    if (producto) {
+      miCarrito.push({ ...producto, cantidad: 1 })
+    }
+  }
+  mostrarCarro();
+}
+
+//Eliminar del carro
+function EliminarDelCarro(idProducto) {
+  const indice = miCarrito.findIndex(item => item.id === idProducto);
+  if (indice !== -1) {
+    miCarrito.splice(indice, 1)
+    mostrarCarro();
+  }
+}
+
+function mostrarCarro() {
+  contenedorElementosCarrito.innerHTML = '';
+  let precioTotal = 0;
+  miCarrito.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `
+    ${item.titulo} x ${item.cantidad} - $${item.precioConIva() * item.cantidad};
+    `
+    const btnEliminar = document.createElement('button');
+    btnEliminar.textContent = 'Eliminar';
+    btnEliminar.addEventListener('click', () => EliminarDelCarro(item.id))
+    li.appendChild(btnEliminar);
+    contenedorElementosCarrito.appendChild(li);
+    precioTotal += item.precioConIva() * item.cantidad;
+  })
+  totalSpan.textContent = precioTotal;
+}
+
+
+let confirmar;
+function realizarCompra() {
+  confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
+  total = totalSpan.textContent;
+  miCarrito.length = 0;
+  mostrarCarro();
+  //REDIRECCIONA A PAGINA DE PAGO
+  if (confirmar == true && total > 0) {
+    window.location.href = "/html/carrito.html";
+  }
+  //MENSAJE ERROR
+  else if (confirmar == true && total == 0) {
+    const error= document.getElementById("error");
+    error.innerHTML="";
+    const numeroInvalido = document.createElement("p");
+    numeroInvalido.textContent = "Ingrese productos antes de confirmar por favor";
+    numeroInvalido.style.fontWeight= 900;
+    numeroInvalido.style.color = "red";
+    error.appendChild(numeroInvalido); 
+  }
+  //LIMPIA EL MENSAJE DE ERROR EN CASO DE ELEGIR CANCELAR
+  else if (confirmar == false){
+    error.innerHTML="";
+  }
+}
 agregarCards(PRODUCTOS);
+document.getElementById('btn-comprar').addEventListener('click', realizarCompra);
+
+
+contenedorCards.addEventListener('click', function (evento) {
+  if (evento.target.classList.contains('btn-comprar')) {
+    const idProducto = parseInt(evento.target.getAttribute('data-id'));
+    AgregarAlCarro(idProducto);
+  }
+
+})
 
