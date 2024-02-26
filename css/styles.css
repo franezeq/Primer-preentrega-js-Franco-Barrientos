@@ -222,27 +222,62 @@ li {
   bottom: 20%;
   top: 10px;
   right: 0px;
-  width: 10%;
+  width: 20vw;
+  max-width: 10vw;
   max-height: 90%;
   height: 100;
   background-color: white;
-  border-radius: 25px;
+  border-radius: 30px;
   text-align: center;
   border: #4FA8C2 solid 1px;
   animation-name: aparece-el-carro;
   animation-duration: 0.5s;
-}
-
-.texto-carro {
-  padding: 15px 5px;
+  flex-direction: column;
+  margin-right: 1px;
+  align-items: center;
 }
 
 .titulo-carro {
-  margin: 2px;
+  background-color: #4FA8C2;
+  color: white;
+  border-radius: 25px 25px 0px 0px;
+  font-size: 20px;
+  padding: 5px 0;
 }
 
-.botonEliminar {
+.lista-carro {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+}
+
+.btn-eliminar {
   border-radius: 25px;
+  color: white;
+  background-color: #9A0000;
+  height: fit-content;
+}
+.btn-eliminar:hover {
+  background-color: #CA0000;
+}
+
+.btn-comprar {
+  background-color: #4FA8C2;
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+}
+.btn-comprar:hover {
+  background-color: #65c5e1;
+}
+
+.carro-comprar-total {
+  display: flex;
+  flex-direction: column;
+  width: 15vh;
+  max-width: 100%;
+  justify-items: end;
+  margin-top: auto;
 }
 
 /*Animacion Carro*/

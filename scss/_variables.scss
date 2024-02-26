@@ -1,5 +1,7 @@
 $celeste: #4FA8C2;
 $celeste2: #65c5e1;
+$rojo-osc: #9A0000;
+$rojo-hover: #CA0000;
 
 @mixin tamaño ($alto, $ancho) {
     width: $ancho;
@@ -12,6 +14,7 @@ $celeste2: #65c5e1;
     display: $display;
     flex-direction: $direccion;
 }
+
 @mixin ordenflex ($alignitem, $justifycontent) {
     align-items: $alignitem;
     justify-content: $justifycontent;

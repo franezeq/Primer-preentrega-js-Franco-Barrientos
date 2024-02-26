@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="barraNav">
+            <ul class="padrelist">
+                <li class="textitem listItem1"><a href="html/catalogo.html"></a>Tienda</li>
+                <li class="textitem listItem2">Contacto</li>
+                <li class="listItem3"><a href="../index.html"><img src="../img/logopng.png" alt="Logo de Meraki"
+                            class="logohead"></a></li>
+                <li class="textitem listItem4"><a href=../index.html>Sobre nosotros</a></li>
+                <li class="textitem listItem5">Iniciar Sesión</li>
+                <li class="listItem6"><a href="pago.html"><img src="../img/carrito.png" alt="Carrito de compras"
+                            class="carrito"></a></li>
+            </ul>
+            <form action="" class="buscador">
+                <label for="buscar" class="buscadorItem">
+                    <h2 class="textoBuscador buscadorItem">Buscar</h2><input type="text" name="buscador" id="buscar"
+                        class="formularioBuscador">
+                    </input>
+                </label>
+            </form>
+        </nav>
+    </header>
+
+    <body>
+        <h1>Realizar mi compra</h1>
+
+        <section>
+            <p>
+                <label for="datos-nombre">
+                    <span>Nombre y Apellido:</span>
+                </label>
+                <input type="text" name="nombre" id="datos-nombre">
+            </p>
+            <p>
+                <label for="datos-direccion">
+                    <span>Direccion:</span>
+                </label>
+                <input type="text" name="direccion" id="datos-direccion">
+            </p>
+            <p>
+                <label for="datos-telefono">
+                    <span>Numero de telefono:</span>
+                </label>
+                <input type="number" name="telefono" id="datos-telefono">
+            </p>
+
+
+            <p>
+                <label for="tarjeta">
+                    <span>Tarjeta:</span>
+                </label>
+                <select name="tarjeta" id="tarjeta">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">Mastercard</option>
+                </select>
+            </p>
+            <p>
+                <label for="num-tarjeta">
+                    <span>Numero de tarjeta:</span>
+                </label>
+                <input type="numero" id="num-tarjeta" placeholder="xxxx xxxx xxxx xxxx">
+
+            </p>
+            <p>
+
+                <label for="fecha-expiracion">
+                    <span>Fecha de expiracion:</span>
+                    <abbr title="">*</abbr>
+                </label>
+                <input type="date" name="expiracion" id="fecha-expiracion">
+            </p>
+            <p> <label for="numero-cuotas">
+                    <span>Numero de cuotas:</span>
+                    <select name="" id="">
+                        <option value="1">1</option>
+                        <option value="3">3</option>
+                        <option value="6">6</option>
+                    </select>
+                </label>
+            </p>
+            <p><button type="submit">Guardar</button></p>
+
+
+        </section>
+        <section>
+            <div>
+                <p>Total a pagar:</p>
+                <p id="total"></p>
+            </div>
+            <div>
+                <p>A pagar en cuotas:</p>
+                <p id="total-en-cuotas"></p>
+            </div>
+            <p>
+                <button>Continuar con el pago</button>
+            </p>
+        </section>
+
+        <script src="../js/index.js"></script>
+    </body>
+    </div>
+
+</html>

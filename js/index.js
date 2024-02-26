@@ -279,14 +279,16 @@ function mostrarCarro() {
   if (miCarrito.length === 0) {
     contenedorCarrito.style.display = 'none';
   } else {
-    contenedorCarrito.style.display = 'block';
+    contenedorCarrito.style.display = "flex";
   }
   miCarrito.forEach(item => {
     const li = document.createElement('li');
+    li.classList.add("texto-carro");
     li.textContent = `
     ${item.titulo} x ${item.cantidad} - $${item.precioConIva() * item.cantidad};
     `
     const btnEliminar = document.createElement('button');
+    btnEliminar.classList.add("btn-eliminar");
     btnEliminar.textContent = 'Eliminar';
     btnEliminar.addEventListener('click', () => EliminarDelCarro(item.id))
     li.appendChild(btnEliminar);
@@ -295,7 +297,6 @@ function mostrarCarro() {
   })
   totalSpan.textContent = precioTotal;
 }
-
 
 let confirmar;
 function realizarCompra() {
@@ -306,20 +307,6 @@ function realizarCompra() {
   //REDIRECCIONA A PAGINA DE PAGO
   if (confirmar == true && total > 0) {
     window.location.href = "/html/carrito.html";
-  }
-  //MENSAJE ERROR
-  else if (confirmar == true && total == 0) {
-    const error = document.getElementById("error");
-    error.innerHTML = "";
-    const numeroInvalido = document.createElement("p");
-    numeroInvalido.textContent = "Ingrese productos antes de confirmar por favor";
-    numeroInvalido.style.fontWeight = 900;
-    numeroInvalido.style.color = "red";
-    error.appendChild(numeroInvalido);
-  }
-  //LIMPIA EL MENSAJE DE ERROR EN CASO DE ELEGIR CANCELAR
-  else if (confirmar == false) {
-    error.innerHTML = "";
   }
 }
 agregarCards(PRODUCTOS);

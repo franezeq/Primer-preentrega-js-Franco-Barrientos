@@ -1,4 +1,4 @@
-.card{
+.card {
     border: 1.5px solid black;
     width: 15vw;
     border-radius: 5px;
@@ -10,20 +10,22 @@
     view-timeline-axis: block;
     animation-timeline: --cards;
     animation-name: aparecer;
-    animation-range: entry 25% cover 50% ;
+    animation-range: entry 25% cover 50%;
     animation-fill-mode: both;
 }
-.card-img{
+
+.card-img {
     max-width: 90%;
     max-height: 50%;
     height: 15vw;
     width: 15vw;
     object-fit: contain;
     margin: 2px auto;
-    
-    
+
+
 }
-.card-body{
+
+.card-body {
     display: flex;
     flex-direction: column;
     padding: 4px;
@@ -31,28 +33,33 @@
     margin: 0 10px;
 
 }
-.card-title{
+
+.card-title {
     font-weight: 700;
     font-size: 20px;
     padding-bottom: 5px;
 }
-.card-desc{
+
+.card-desc {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding: 8px 0;
 }
-.card-precio-ant{
+
+.card-precio-ant {
     font-weight: 200;
     text-decoration: line-through;
     font-size: 1vw;
 }
-.card-precio-desc{
+
+.card-precio-desc {
     font-weight: 800;
     font-size: 1.5vw;
 }
-.card-boton{
+
+.card-boton {
     border-radius: 25px;
     font-size: 1.2vw;
     margin: 10px 1vw 5px 1vw;
@@ -62,88 +69,142 @@
     color: white;
     background-color: $celeste;
 }
-.card-boton:hover{
-    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+
+.card-boton:hover {
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
     transform: scale(1.1);
     background-color: $celeste2;
 }
-.card-text{
+
+.card-text {
     font-size: 16px;
     font-weight: 500;
     margin-top: 2px;
 }
+
 /*GRILLA CARDS*/
-.card-grid{
+.card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin: 30px 15%;
 }
+
 /*HOME*/
-.subhome{
+.subhome {
     font-size: 25px;
     text-align: center;
     text-decoration: underline;
     margin: 1vw auto;
 }
-.titulo{
+
+.titulo {
     font-size: 30px;
     text-align: center;
     margin: 1vw auto;
 }
-.img-principal-padre{
+
+.img-principal-padre {
     display: flex;
     flex-direction: column;
 }
-.img-principal{
+
+.img-principal {
     max-width: 80%;
     width: 900px;
     height: auto;
     margin: auto;
 }
-#carrito{
+
+#carrito {
     display: none;
     position: fixed;
     bottom: 20%;
     top: 10px;
     right: 0px;
-    width: 10%;
+    width: 20vw;
+    max-width: 10vw;
     max-height: 90%;
     height: 100;
     background-color: white;
-    border-radius: 25px;
+    border-radius: 30px;
     text-align: center;
     border: $celeste solid 1px;
     animation-name: aparece-el-carro;
     animation-duration: 0.5s;
+    flex-direction: column;
+    margin-right: 1px;
+    align-items: center;
+}
+
+
+
+.titulo-carro {
+    background-color: $celeste;
+    color: white;
+   border-radius: 25px 25px 0px 0px;
+   font-size: 20px;
+   padding: 5px 0;
+}
+.lista-carro{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+
+
 
 }
-.texto-carro{
-    padding: 15px 5px;
-}
-.titulo-carro{
-    margin: 2px;
-}
-.botonEliminar{
+.btn-eliminar {
     border-radius: 25px;
+    color: white;
+    background-color: $rojo-osc;
+    height: fit-content;
+    &:hover{
+        background-color: $rojo-hover;
+    }
 }
+
+.btn-comprar {
+    background-color: $celeste;
+    color: white;
+    border-radius: 25px;
+    font-size: 20px;
+    &:hover{
+        background-color: $celeste2;
+
+    }
+
+}
+
+.carro-comprar-total {
+    display: flex;
+    flex-direction: column;
+    width: 15vh;
+    max-width: 100%;
+    justify-items: end;
+    margin-top: auto;
+
+}
+
 /*Animacion Carro*/
-@keyframes aparece-el-carro{
-    from{
+@keyframes aparece-el-carro {
+    from {
         position: fixed;
         right: -100px;
     }
-    to{
+
+    to {
         right: 0px;
     }
 }
 
 /*Animacion grilla*/
-@keyframes aparecer{
-    from{
+@keyframes aparecer {
+    from {
         opacity: 0;
         scale: 0%;
     }
-    to{
+
+    to {
         opacity: 1;
         scale: 100%;
     }
