@@ -306,7 +306,7 @@ function realizarCompra() {
   mostrarCarro();
   //REDIRECCIONA A PAGINA DE PAGO
   if (confirmar == true && total > 0) {
-    window.location.href = "/html/carrito.html";
+    window.location.href = "/html/pago.html";
   }
 }
 agregarCards(PRODUCTOS);
