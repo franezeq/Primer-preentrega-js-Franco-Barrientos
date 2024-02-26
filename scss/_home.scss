@@ -100,6 +100,42 @@
     height: auto;
     margin: auto;
 }
+#carrito{
+    display: none;
+    position: fixed;
+    bottom: 20%;
+    top: 10px;
+    right: 0px;
+    width: 10%;
+    max-height: 90%;
+    height: 100;
+    background-color: white;
+    border-radius: 25px;
+    text-align: center;
+    border: $celeste solid 1px;
+    animation-name: aparece-el-carro;
+    animation-duration: 0.5s;
+
+}
+.texto-carro{
+    padding: 15px 5px;
+}
+.titulo-carro{
+    margin: 2px;
+}
+.botonEliminar{
+    border-radius: 25px;
+}
+/*Animacion Carro*/
+@keyframes aparece-el-carro{
+    from{
+        position: fixed;
+        right: -100px;
+    }
+    to{
+        right: 0px;
+    }
+}
 
 /*Animacion grilla*/
 @keyframes aparecer{

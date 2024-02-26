@@ -13,25 +13,32 @@ const USUARIOS = [
 ]
 console.log(USUARIOS);
 //INICIAR SESION, VERIFICAR ARRAY Y RETORNAR TRUE or FALSE (AGREGADO PARA LA SEGUNDA ENTREGA)
-/*
+
+
+
 let user;
 let pw;
 let verificar;
-while (true) {
-  let user = prompt("ingrese su usuario");
-  let pw = prompt("ingrese su contraseña");
-  verificar = !!USUARIOS.find(persona=> persona.usuario === user && persona.contrasenia === pw);
-  if (verificar){
-    console.log("Bienvenido/a"+" "+user);
-    break;
-  }
-  else {
-    console.log("usuario y/o contraseña erroneos, ingrese nuevamente")
-    continue;
+const SESION = document.getElementById("iniciar-sesion");
+SESION.addEventListener('click', function IniciarSesion() {
+  while (true) {
+    user = prompt("ingrese su usuario");
+    pw = prompt("ingrese su contraseña");
+    verificar = !!USUARIOS.find(persona => persona.usuario === user && persona.contrasenia === pw);
+    if (verificar) {
+      console.log("Bienvenido/a" + " " + user);
+      SESION.textContent= "Bienvenido/a "+user;
+      return user;
+    }
+    else {
+      console.log("usuario y/o contraseña erroneos, ingrese nuevamente")
+      continue;
+    }
   }
 }
+)
 
-
+/*
 
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
 
@@ -178,8 +185,8 @@ const search = (letra) => {
   return PRODUCTOS.filter(item => {
     return item.titulo.toLowerCase().includes(letra.toLowerCase())
   })
-  
-  
+
+
 }
 
 const buscadorFuncional = document.getElementById("buscar");
@@ -230,7 +237,7 @@ function agregarCards(products) {
                     <div class="card-desc">
                         <h3 class="card-precio-desc">$${PRODUCTOS.precioConIva()}</h3>
                     </div>
-                    <button type="button" class="card-boton btn-comprar" data-id="${PRODUCTOS.id}">
+                    <button type="button" class="card-boton btn-comprar botones" data-id="${PRODUCTOS.id}">
                        Agregar
                     </button>
                 </div>
@@ -267,6 +274,13 @@ function EliminarDelCarro(idProducto) {
 function mostrarCarro() {
   contenedorElementosCarrito.innerHTML = '';
   let precioTotal = 0;
+
+  const contenedorCarrito = document.getElementById('carrito');
+  if (miCarrito.length === 0) {
+    contenedorCarrito.style.display = 'none';
+  } else {
+    contenedorCarrito.style.display = 'block';
+  }
   miCarrito.forEach(item => {
     const li = document.createElement('li');
     li.textContent = `
@@ -295,17 +309,17 @@ function realizarCompra() {
   }
   //MENSAJE ERROR
   else if (confirmar == true && total == 0) {
-    const error= document.getElementById("error");
-    error.innerHTML="";
+    const error = document.getElementById("error");
+    error.innerHTML = "";
     const numeroInvalido = document.createElement("p");
     numeroInvalido.textContent = "Ingrese productos antes de confirmar por favor";
-    numeroInvalido.style.fontWeight= 900;
+    numeroInvalido.style.fontWeight = 900;
     numeroInvalido.style.color = "red";
-    error.appendChild(numeroInvalido); 
+    error.appendChild(numeroInvalido);
   }
   //LIMPIA EL MENSAJE DE ERROR EN CASO DE ELEGIR CANCELAR
-  else if (confirmar == false){
-    error.innerHTML="";
+  else if (confirmar == false) {
+    error.innerHTML = "";
   }
 }
 agregarCards(PRODUCTOS);
