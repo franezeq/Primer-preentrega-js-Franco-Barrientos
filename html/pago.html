@@ -33,81 +33,82 @@
 
     <body>
         <h1>Realizar mi compra</h1>
+        <div class="pago-realizar-compra">
+            <section class="pago-formularios">
+                <p>
+                    <label for="datos-nombre">
+                        <span>Nombre y Apellido:</span>
+                    </label>
+                    <input type="text" name="nombre" id="datos-nombre" class="pago-input">
+                </p>
+                <p>
+                    <label for="datos-direccion">
+                        <span>Direccion:</span>
+                    </label>
+                    <input type="text" name="direccion" id="datos-direccion" class="pago-input">
+                </p>
+                <p>
+                    <label for="datos-telefono">
+                        <span>Numero de telefono:</span>
+                    </label>
+                    <input type="number" name="telefono" id="datos-telefono" class="pago-input">
+                </p>
 
-        <section>
-            <p>
-                <label for="datos-nombre">
-                    <span>Nombre y Apellido:</span>
-                </label>
-                <input type="text" name="nombre" id="datos-nombre">
-            </p>
-            <p>
-                <label for="datos-direccion">
-                    <span>Direccion:</span>
-                </label>
-                <input type="text" name="direccion" id="datos-direccion">
-            </p>
-            <
-                <label for="datos-telefono">
-                    <span>Numero de telefono:</span>
-                </label>
-                <input type="number" name="telefono" id="datos-telefono">
-            </p>
 
-
-            <p>
-                <label for="tarjeta">
-                    <span>Tarjeta:</span>
-                </label>
-                <select name="tarjeta" id="tarjeta">
-                    <option value="visa">Visa</option>
-                    <option value="mastercard">Mastercard</option>
-                </select>
-            </p>
-            <p>
-                <label for="num-tarjeta">
-                    <span>Numero de tarjeta:</span>
-                </label>
-                <input type="numero" id="num-tarjeta" placeholder="xxxx xxxx xxxx xxxx">
-
-            </p>
-            <p>
-
-                <label for="fecha-expiracion">
-                    <span>Fecha de expiracion:</span>
-                    <abbr title="">*</abbr>
-                </label>
-                <input type="date" name="expiracion" id="fecha-expiracion">
-            </p>
-            <p> <label for="numero-cuotas">
-                    <span>Numero de cuotas:</span>
-                    <select name="" id="">
-                        <option value="1">1</option>
-                        <option value="3">3</option>
-                        <option value="6">6</option>
+                <p>
+                    <label for="tarjeta">
+                        <span>Tarjeta:</span>
+                    </label>
+                    <select name="tarjeta" id="tarjeta" class="seleccion-tarjeta">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">Mastercard</option>
                     </select>
-                </label>
-            </p>
-            <p><button type="submit">Guardar</button></p>
+                </p>
+                <p>
+                    <label for="num-tarjeta">
+                        <span>Numero de tarjeta:</span>
+                    </label>
+                    <input type="numero" id="num-tarjeta" placeholder="xxxx xxxx xxxx xxxx" class="pago-input">
+
+                </p>
+                <p>
+
+                    <label for="fecha-expiracion">
+                        <span>Fecha de expiracion:</span>
+                        <abbr title="">*</abbr>
+                    </label>
+                    <input type="date" name="expiracion" id="fecha-expiracion">
+                </p>
+                <p> <label for="numero-cuotas">
+                        <span>Numero de cuotas:</span>
+                        <select name="" id="">
+                            <option value="1">1</option>
+                            <option value="3">3</option>
+                            <option value="6">6</option>
+                        </select>
+                    </label>
+                </p>
+                <p><button type="submit">Guardar</button></p>
 
 
-        </section>
-        <section>
-            <div>
-                <p>Total a pagar:</p>
-                <p id="total"></p>
-            </div>
-            <div>
-                <p>A pagar en cuotas:</p>
-                <p id="total-en-cuotas"></p>
-            </div>
-            <p>
-                <button>Continuar con el pago</button>
-            </p>
-        </section>
+            </section>
+            <section class="pago-confirmar">
+                <div>
+                    <p>Total a pagar:</p>
+                    <p id="total"></p>
+                </div>
+                <div>
+                    <p>A pagar en cuotas:</p>
+                    <p id="total-en-cuotas"></p>
+                </div>
+                <p>
+                    <button>Continuar con el pago</button>
+                </p>
+            </section>
 
-        <script src="../js/index.js"></script>
+            <script src="../js/index.js"></script>
+        </div>
     </body>
-    </div>
+
 
 </html>

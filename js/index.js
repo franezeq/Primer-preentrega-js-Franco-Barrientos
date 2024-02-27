@@ -1,6 +1,6 @@
 
 //ARRAY de USUARIOS (AGREGADO PARA LA SEGUNDA ENTREGA)
-class Usuarios {
+/*class Usuarios {
   constructor(usuario, contrasenia) {
     this.usuario = usuario;
     this.contrasenia = contrasenia;
@@ -15,12 +15,13 @@ console.log(USUARIOS);
 //INICIAR SESION, VERIFICAR ARRAY Y RETORNAR TRUE or FALSE (AGREGADO PARA LA SEGUNDA ENTREGA)
 
 
-
-let user;
+*/
+/*let user;
 let pw;
 let verificar;
 const SESION = document.getElementById("iniciar-sesion");
 SESION.addEventListener('click', function IniciarSesion() {
+
   while (true) {
     user = prompt("ingrese su usuario");
     pw = prompt("ingrese su contraseña");
@@ -28,6 +29,7 @@ SESION.addEventListener('click', function IniciarSesion() {
     if (verificar) {
       console.log("Bienvenido/a" + " " + user);
       SESION.textContent= "Bienvenido/a "+user;
+      localStorage.setItem("logCorrecto", true);
       return user;
     }
     else {
@@ -37,7 +39,11 @@ SESION.addEventListener('click', function IniciarSesion() {
   }
 }
 )
-
+window.addEventListener("load", function(){
+  if(localStorage.getItem("logCorrecto")){
+  window.location.href = "index.html"
+}
+})
 /*
 
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
@@ -321,3 +327,9 @@ contenedorCards.addEventListener('click', function (evento) {
 
 })
 
+//Cerrar sesion
+document.getElementById("cerrar-sesion").addEventListener("click", function CerrarSesion(){
+  localStorage.removeItem("logCorrecto");
+    
+  window.location.href = "/html/inicio.html";
+});
