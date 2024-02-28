@@ -204,7 +204,7 @@ function agregarCards(products) {
     contenedorCards.appendChild(card);
   });
 }
-
+//local storage guardar y recuperrarr
 function GuardarCarro() {
   localStorage.setItem("carrostring", JSON.stringify(miCarrito))
 }
@@ -239,7 +239,7 @@ function EliminarDelCarro(idProducto) {
     mostrarCarro();
   }
 }
-
+//carro renderizado con boton eliminar
 function mostrarCarro() {
   contenedorElementosCarrito.innerHTML = '';
   let precioTotal = 0;
@@ -268,6 +268,7 @@ function mostrarCarro() {
   totalSpan.textContent = precioTotal;
 }
 
+
 let confirmar;
 function realizarCompra() {
   confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
@@ -291,7 +292,7 @@ contenedorCards.addEventListener('click', function (evento) {
   }
 
 })
-
+//evento al recargar pagina??
 window.addEventListener("load", function Recargar() {
   RecuperarCarro();
   mostrarCarro();
