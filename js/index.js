@@ -1,51 +1,4 @@
-
-//ARRAY de USUARIOS (AGREGADO PARA LA SEGUNDA ENTREGA)
-/*class Usuarios {
-  constructor(usuario, contrasenia) {
-    this.usuario = usuario;
-    this.contrasenia = contrasenia;
-  }
-}
-
-const USUARIOS = [
-  franco = new Usuarios("franco", "entrar"),
-  mica = new Usuarios("mica", "mika")
-]
-console.log(USUARIOS);
-//INICIAR SESION, VERIFICAR ARRAY Y RETORNAR TRUE or FALSE (AGREGADO PARA LA SEGUNDA ENTREGA)
-
-
-*/
-/*let user;
-let pw;
-let verificar;
-const SESION = document.getElementById("iniciar-sesion");
-SESION.addEventListener('click', function IniciarSesion() {
-
-  while (true) {
-    user = prompt("ingrese su usuario");
-    pw = prompt("ingrese su contraseña");
-    verificar = !!USUARIOS.find(persona => persona.usuario === user && persona.contrasenia === pw);
-    if (verificar) {
-      console.log("Bienvenido/a" + " " + user);
-      SESION.textContent= "Bienvenido/a "+user;
-      localStorage.setItem("logCorrecto", true);
-      return user;
-    }
-    else {
-      console.log("usuario y/o contraseña erroneos, ingrese nuevamente")
-      continue;
-    }
-  }
-}
-)
-window.addEventListener("load", function(){
-  if(localStorage.getItem("logCorrecto")){
-  window.location.href = "index.html"
-}
-})
 /*
-
 //CALCULAR IVA CON LA CANTIDAD DE PRODUCTOS QUE DESEA EL CLIENTE
 
 let cantProductos = 0;
@@ -125,7 +78,6 @@ tarjetas();
 if (cuotas == false) {
   tarjetas();
 }
-
 */
 //SEGUNDA PRE ENTREGA
 let conIva;
@@ -224,7 +176,7 @@ console.log(PRODUCTOS);
 
 
 
-const miCarrito = [];
+let miCarrito = [];
 const contenedorElementosCarrito = document.getElementById('mi-carrito');
 const totalSpan = document.getElementById('total');
 
@@ -253,26 +205,37 @@ function agregarCards(products) {
   });
 }
 
+function GuardarCarro() {
+  localStorage.setItem("carrostring", JSON.stringify(miCarrito))
+}
+function RecuperarCarro() {
+  JSON.parse(localStorage.getItem("carrostring"));
+  mostrarCarro();
+};
+
 //agregar al carro
 function AgregarAlCarro(idProducto) {
   const itemExistente = miCarrito.find(item => item.id === idProducto);
   if (itemExistente) {
-    itemExistente.cantidad++
+    itemExistente.cantidad++;
+
   }
   else {
     const producto = PRODUCTOS.find(p => p.id === idProducto);
     if (producto) {
       miCarrito.push({ ...producto, cantidad: 1 })
-    }
-  }
-  mostrarCarro();
-}
 
+    }
+    GuardarCarro();
+    mostrarCarro();
+  }
+}
 //Eliminar del carro
 function EliminarDelCarro(idProducto) {
   const indice = miCarrito.findIndex(item => item.id === idProducto);
   if (indice !== -1) {
-    miCarrito.splice(indice, 1)
+    miCarrito.splice(indice, 1);
+    GuardarCarro();
     mostrarCarro();
   }
 }
@@ -300,6 +263,7 @@ function mostrarCarro() {
     li.appendChild(btnEliminar);
     contenedorElementosCarrito.appendChild(li);
     precioTotal += item.precioConIva() * item.cantidad;
+
   })
   totalSpan.textContent = precioTotal;
 }
@@ -309,7 +273,6 @@ function realizarCompra() {
   confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
   total = totalSpan.textContent;
   miCarrito.length = 0;
-  mostrarCarro();
   //REDIRECCIONA A PAGINA DE PAGO
   if (confirmar == true && total > 0) {
     window.location.href = "/html/pago.html";
@@ -323,13 +286,22 @@ contenedorCards.addEventListener('click', function (evento) {
   if (evento.target.classList.contains('btn-comprar')) {
     const idProducto = parseInt(evento.target.getAttribute('data-id'));
     AgregarAlCarro(idProducto);
+    GuardarCarro();
+
   }
 
 })
 
+window.addEventListener("load", function Recargar() {
+  RecuperarCarro();
+  mostrarCarro();
+
+
+});
 //Cerrar sesion
-document.getElementById("cerrar-sesion").addEventListener("click", function CerrarSesion(){
+document.getElementById("cerrar-sesion").addEventListener("click", function CerrarSesion() {
   localStorage.removeItem("logCorrecto");
-    
+
   window.location.href = "/html/inicio.html";
 });
+
