@@ -25,6 +25,12 @@ a:hover {
   color: white;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .barraNav {
   background-color: pink;
   align-items: center;
@@ -217,38 +223,41 @@ li {
 }
 
 #carrito {
-  display: none;
+  display: "flex";
   position: fixed;
   bottom: 20%;
-  top: 10px;
-  right: 0px;
+  top: 2.5vw;
+  right: 14vw;
   width: 20vw;
   max-width: 10vw;
   max-height: 90%;
-  height: 100;
-  background-color: white;
-  border-radius: 30px;
+  height: fit-content;
   text-align: center;
   border: #4FA8C2 solid 1px;
   animation-name: aparece-el-carro;
-  animation-duration: 0.5s;
+  animation-duration: 0.1s;
   flex-direction: column;
-  margin-right: 1px;
   align-items: center;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 1001;
 }
 
 .titulo-carro {
   background-color: #4FA8C2;
   color: white;
-  border-radius: 25px 25px 0px 0px;
-  font-size: 20px;
-  padding: 5px 0;
+  font-size: 15px;
+  width: fit-content;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
 .lista-carro {
   display: flex;
   flex-direction: column;
   padding: 10px 10px;
+  font-size: 14px;
 }
 
 .btn-eliminar {
@@ -277,17 +286,16 @@ li {
   width: 15vh;
   max-width: 100%;
   justify-items: end;
-  margin-top: auto;
+  margin: auto;
 }
 
 /*Animacion Carro*/
 @keyframes aparece-el-carro {
   from {
-    position: fixed;
-    right: -100px;
+    opacity: 0;
   }
   to {
-    right: 0px;
+    opacity: 1;
   }
 }
 /*Animacion grilla*/

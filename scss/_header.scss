@@ -13,6 +13,14 @@ a{
 a:hover{
     color: white;
 }
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+ 
+
+
+}
 .barraNav {
     background-color: pink;
     align-items: center;

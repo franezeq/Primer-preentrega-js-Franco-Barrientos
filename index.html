@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <nav class="barraNav">
             <ul class="padrelist">
                 <li class="textitem listItem1"><a href="html/catalogo.html">Tienda</a></li>
@@ -17,8 +17,8 @@
                 <li class="listItem3"><img src="img/logopng.png" alt="Logo de Meraki" class="logohead"></li>
                 <li class="textitem listItem4"><a href="#quienes">Sobre nosotros</a></li>
                 <li class="textitem listItem5" id="cerrar-sesion">Cerrar sesión</li>
-                <li class="listItem6"><a href="html/pago.html"><img src="img/carrito.png" alt="Carrito de compras"
-                            class="carrito"></a></li>
+                <li class="listItem6"><img src="img/carrito.png" alt="Carrito de compras" class="carrito"
+                        id="img-carrito"></li>
             </ul>
             <form action="" class="buscador">
                 <label for="buscar" class="buscadorItem">
@@ -44,9 +44,13 @@
             <section id="productos-container" class="container card-grid"></section>
         </section>
         <div id="carrito" class="carro">
+            <div class="titulo-carro">
+                <h2>Mi carrito</h2>
+            </div>
             <div>
-                <h2 class="titulo-carro">Mi carrito</h2>
+
                 <ul id="mi-carrito" class="lista-carro">
+
 
                 </ul>
             </div>

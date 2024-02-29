@@ -91,10 +91,7 @@ class Productos {
     this.precio = parseFloat(precio);
     this.stock = stock;
     this.alt = alt;
-    this.precioConIva = function () {
-      return parseInt(this.precio * 1.21);
-
-    }
+    this.precioConIva = parseInt(precio * 1.21);
   }
   vender() {
     this.stock--;
@@ -126,10 +123,10 @@ const PRODUCTOS = [
 
 console.log(dinosaurio);
 dinosaurio.vender();
-console.log(dinosaurio.precioConIva());
+console.log(dinosaurio.precioConIva);
 console.log(dinosaurio);  //Stock billetera con 1 unidad vendida
 
-console.log(billeteraMarron.precioConIva());
+console.log(billeteraMarron.precioConIva);
 console.log(billeteraMarron);
 console.log(mateRojo);
 mateRojo.vender();
@@ -193,7 +190,7 @@ function agregarCards(products) {
                     <h4 class="card-title">${PRODUCTOS.titulo}</h4>
                     <p class="card-text">${PRODUCTOS.descripcion}</p>
                     <div class="card-desc">
-                        <h3 class="card-precio-desc">$${PRODUCTOS.precioConIva()}</h3>
+                        <h3 class="card-precio-desc">$${PRODUCTOS.precioConIva}</h3>
                     </div>
                     <button type="button" class="card-boton btn-comprar botones" data-id="${PRODUCTOS.id}">
                        Agregar
@@ -209,7 +206,7 @@ function GuardarCarro() {
   localStorage.setItem("carrostring", JSON.stringify(miCarrito))
 }
 function RecuperarCarro() {
-  JSON.parse(localStorage.getItem("carrostring"));
+  miCarrito = JSON.parse(localStorage.getItem("carrostring")) || [];
   mostrarCarro();
 };
 
@@ -241,20 +238,19 @@ function EliminarDelCarro(idProducto) {
 }
 //carro renderizado con boton eliminar
 function mostrarCarro() {
+  //MOSTRAR MENSAJE CUANDO EL CARRO ESTA VACIO
+  if (miCarrito.length === 0) {
+    contenedorElementosCarrito.textContent = "Tu carrito está vacío";
+} else {
+ // MOSTRAR LOS PRODUCTOS CUANDO LOS TENGA
   contenedorElementosCarrito.innerHTML = '';
   let precioTotal = 0;
 
-  const contenedorCarrito = document.getElementById('carrito');
-  if (miCarrito.length === 0) {
-    contenedorCarrito.style.display = 'none';
-  } else {
-    contenedorCarrito.style.display = "flex";
-  }
   miCarrito.forEach(item => {
     const li = document.createElement('li');
     li.classList.add("texto-carro");
     li.textContent = `
-    ${item.titulo} x ${item.cantidad} - $${item.precioConIva() * item.cantidad};
+    ${item.titulo} x ${item.cantidad} - $${item.precioConIva * item.cantidad};
     `
     const btnEliminar = document.createElement('button');
     btnEliminar.classList.add("btn-eliminar");
@@ -262,10 +258,12 @@ function mostrarCarro() {
     btnEliminar.addEventListener('click', () => EliminarDelCarro(item.id))
     li.appendChild(btnEliminar);
     contenedorElementosCarrito.appendChild(li);
-    precioTotal += item.precioConIva() * item.cantidad;
+    precioTotal += item.precioConIva * item.cantidad;
 
   })
   totalSpan.textContent = precioTotal;
+}
+
 }
 
 
@@ -292,7 +290,7 @@ contenedorCards.addEventListener('click', function (evento) {
   }
 
 })
-//evento al recargar pagina??
+//evento al recargar pagina
 window.addEventListener("load", function Recargar() {
   RecuperarCarro();
   mostrarCarro();
@@ -305,4 +303,14 @@ document.getElementById("cerrar-sesion").addEventListener("click", function Cerr
 
   window.location.href = "/html/inicio.html";
 });
+//APARECE O DESAPARECE CARRRO
+document.getElementById("img-carrito").addEventListener("click", function() {
+  const contenedorCarrito = document.getElementById('carrito');
+  if (contenedorCarrito.style.display === "none" || contenedorCarrito.style.display === "") {
+    contenedorCarrito.style.display = "block"; // Muestra el carrito
+  } else {
+    contenedorCarrito.style.display = "none"; // Oculta el carrito
+  }
+});
+
 
