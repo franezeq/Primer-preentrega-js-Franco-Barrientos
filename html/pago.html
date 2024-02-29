@@ -19,7 +19,7 @@
                 <li class="textitem listItem4"><a href=../index.html>Sobre nosotros</a></li>
                 <li class="textitem listItem5">Iniciar Sesión</li>
                 <li class="listItem6"><img src="../img/carrito.png" alt="Carrito de compras" class="carrito"
-                    id="img-carrito"></li>
+                        id="img-carrito"></li>
             </ul>
             <form action="" class="buscador">
                 <label for="buscar" class="buscadorItem">
@@ -32,7 +32,7 @@
     </header>
 
     <body>
-        <h1>Realizar mi compra</h1>
+        <h1 class="titulo-pago">Realizar mi compra</h1>
         <div class="pago-realizar-compra">
             <section class="pago-formularios">
                 <p>
@@ -81,7 +81,7 @@
                 </p>
                 <p> <label for="numero-cuotas">
                         <span>Numero de cuotas:</span>
-                        <select name="" id="">
+                        <select name="" id="numero-cuotas">
                             <option value="1">1</option>
                             <option value="3">3</option>
                             <option value="6">6</option>
@@ -93,20 +93,21 @@
 
             </section>
             <section class="pago-confirmar">
+                <h3 class="micarrito-subtitulo">Mi Carrito</h3>
+                <div id="detalles-carrito">
+
+                </div>
                 <div>
                     <p>Total a pagar:</p>
                     <div id="total-a-pagar"></div>
                 </div>
-                <div>
-                    <p>A pagar en cuotas:</p>
-                    <p id="total-en-cuotas"></p>
-                </div>
+
                 <p>
                     <button>Continuar con el pago</button>
                 </p>
             </section>
+            <script src="../js/pago.js"></script>
 
-            <script src="../js/index.js"></script>
         </div>
     </body>
 

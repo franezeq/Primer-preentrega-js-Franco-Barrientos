@@ -48,3 +48,30 @@
         background-color: $celeste2;
     }
 }
+.producto-en-carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.producto-en-carrito p{
+    font-size: 18px;
+}
+.imagen-producto-en-carrito{
+    width: 4vw;
+    height: auto;
+    margin-right: 1vw;
+}
+#total-a-pagar{
+    font-size: 21px;
+    font-weight: 700;
+    padding: 3px 0 5px 0;
+}
+.micarrito-subtitulo{
+    font-size: 27px;
+    padding-bottom: 7px;
+}
+.titulo-pago{
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px 0 10px 10px;
+}
