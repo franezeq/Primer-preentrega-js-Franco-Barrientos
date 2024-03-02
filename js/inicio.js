@@ -41,3 +41,5 @@ window.addEventListener("load", function () {
         window.location.href = "/index.html";
     }
 })
+
+const Swal = require('sweetalert2')

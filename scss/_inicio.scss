@@ -1,0 +1,24 @@
+.ingresar{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+}
+.subtitulo-ingreso{
+    margin: auto;
+}
+.boton-ingresar{
+    width: fit-content;
+    margin: 9px auto;
+    border-radius: 25px;
+    font-size: 1.2vw;
+    transition: transform 0.1s linear;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    background-color: $celeste;
+    padding: 0.8vh;
+    &:hover{
+        background-color: $celeste2;
+    }
+}

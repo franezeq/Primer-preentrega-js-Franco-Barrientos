@@ -5,28 +5,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <form action="" id="inicio-formulario">
-        <p>
-            <label for="inicio-usuario">
-                <span>Usuario</span>
-            </label>
-            <input type="text" name="user" id="inicio-usuario" class="usuario">
-        </p>
-        <p>
-            <label for="inicio-pw">
-                <span>Contraseña:</span>
-            </label>
-            <input type="text" name="inicio pw" id="inicio-pw" class="pw">
-        </p>
-        <p id="error"></p>
-        <p>
-            <button type="submit" id="validar">Ingresar</button>
-        </p>
-    </form>
+    <header class="header">
+        <nav class="barraNav">
+            <ul class="padrelist">
+                <li class="textitem listItem1"><a href="html/catalogo.html">Tienda</a></li>
+                <li class="textitem listItem2"><a href="#contacto">Contacto</a></li>
+                <li class="listItem3"><img src="../img/logopng.png" alt="Logo de Meraki" class="logohead"></li>
+                <li class="textitem listItem4"><a href="#quienes">Sobre nosotros</a></li>
+                <li class="textitem listItem5" id="cerrar-sesion">Cerrar sesión</li>
+                <li class="listItem6"><img src="../img/carrito.png" alt="Carrito de compras" class="carrito"
+                        id="img-carrito"></li>
+            </ul>
+            <form action="" class="buscador">
+                <label for="buscar" class="buscadorItem">
+                    <h2 class="textoBuscador buscadorItem">Buscar</h2><input type="text" name="buscador" id="buscar"
+                        class="buscador-input" class="formularioBuscador"><button value="Buscar">BUSCAR</button>
+                    </input>
+                </label>
+            </form>
+        </nav>
+    </Header>
+
+    <main>
+
+
+        <form action="" id="inicio-formulario">
+            <p>
+                <label for="inicio-usuario">
+                    <span>Usuario</span>
+                </label>
+                <input type="text" name="user" id="inicio-usuario" class="usuario">
+            </p>
+            <p>
+                <label for="inicio-pw">
+                    <span>Contraseña:</span>
+                </label>
+                <input type="text" name="inicio pw" id="inicio-pw" class="pw">
+            </p>
+            <p id="error"></p>
+            <p>
+                <button type="submit" id="validar">Ingresar</button>
+            </p>
+        </form>
+
+        <h1 class="titulo">Bienvenido a Meraki</h1>
+        <figure class="img-principal-padre">
+            <img src="../img/40dedescuento.jpg" class="img-principal" alt="Hasta 40% de descuento">
+        </figure>
+
+        <section class="card-grid">
+            <div class="card">
+                <img src="../img/esmalteaurora.png" class="card-img" alt="Esmalte infantil para uñas de Aurora">
+                <div class="card-body">
+                    <h4 class="card-title">Disney</h4>
+                    <p class="card-text">Esmalte de aurora</p>
+                    <div class="card-desc">
+                        <h3 class="card-precio-desc">$1340</h3>
+                    </div>
+                    <button type="button" class="card-boton">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../img/JuegoComidax5.jpg" class="card-img" alt="Bocadillos de jueguete para jugar">
+                <div class="card-body">
+                    <h4 class="card-title">Set de comida de juguete</h4>
+                    <p class="card-text">Mate color rojo con bombilla saca yerba.</p>
+                    <div class="card-desc">
+                        <h3 class="card-precio-desc">$3310</h3>
+                    </div>
+                    <button type="button" class="card-boton">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../img/jabonpawpatrol.jpg" class="card-img" alt="Jabon liquido de Paw Patrol">
+                <div class="card-body">
+                    <h4 class="card-title">Paw Patrol</h4>
+                    <p class="card-text">Jabon liquido de Paw Patrol</p>
+                    <div class="card-desc">
+                        <h3 class="card-precio-desc">$2100</h3>
+                    </div>
+                    <button type="button" class="card-boton">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="../img/LuncheraMickeypng.jpg" class="card-img" alt="Lonchera de Mickey Mouse">
+                <div class="card-body">
+                    <h4 class="card-title">Lunchera de Mickey Mouse</h4>
+                    <p class="card-text">Lunchera infantil de Mickey Mouse.</p>
+                    <div class="card-desc">
+                        <h3 class="card-precio-desc">$5120</h3>
+                    </div>
+                    <button type="button" class="card-boton">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </section>
+        <div class="ingresar">
+            <h3 class="subtitulo-ingreso">Ingresar como usuario para ver todos los productos</h3>
+            <button value="ingresar!" type="button" class="boton-ingresar">Ingresar a Meraki</button>
+        </div>
+
+
+
+
+        <section class="quienes"><a name="quienes"></a>
+            <h2 class="quienessomos-titulo">¿Quienes Somos?</h2>
+            <p class="quienessomos eslogan">"Huellas lindas que deja la vida"</p>
+            <p class="quienessomos">Como nuestro eslogan dice, buscamos que con tu regalo puedas dejar una huella en
+                tus
+                seres queridos, todo lo que hacemos lo hacemos con amor. <br>
+                Meraki es un emprendimiento familiar, comenzamos en 2022 como regalería y al día de hoy tenemos
+                clientes
+                que
+                nos eligen por la calidad de nuestros productos, por nuestra buena atención y claro, por nuestros
+                accesibles
+                precios. <br>
+                ¡Te esperamos en Meraki, contactate con nosotros!
+            </p>
+            <section><a name="contacto"></a>
+                <h2 class="contacto-titulo">Contacto</h2>
+                <form action="" class="form">
+                    <label for="nombre" hidden>Nombre</label>
+                    <input type="text" id="nombre" class="form1 itemform" placeholder="Nombre y apellido">
+
+
+
+                    <label for="edad" hidden>Edad</label>
+                    <input type="text" id="edad" class="form2 itemform" placeholder="Edad">
+
+
+
+                    <label for="correo" hidden class="form3">Correo</label>
+                    <input type="email" id="correo" class="form3  itemform" placeholder="Correo electrónico">
+
+
+
+                    <div class="form4 itemform">
+                        <label for="motivo">Motivo</label>
+                        <select id="motivo" class="motivo">
+                            <option value="consulta">Consulta</option>
+                            <option value="pedido">Pedido</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+
+
+                    <label for="mensaje"></label>
+                    <textarea name="" id="mensaje" cols="30" rows="10" placeholder="Deje su mensaje"
+                        class="form5 itemform"></textarea>
+
+                    <div class="form6 itemform">
+                        <input class="formbotones" type="submit" value="Enviar">
+                        <input class="formbotones" type="reset" value="Borrar todo">
+                    </div>
+                </form>
+            </section>
+            <section class="quienes"><a name="quienes"></a>
+                <h2 class="quienessomos-titulo">¿Quienes Somos?</h2>
+                <p class="quienessomos eslogan">"Huellas lindas que deja la vida"</p>
+                <p class="quienessomos">Como nuestro eslogan dice, buscamos que con tu regalo puedas dejar una
+                    huella en tus
+                    seres queridos, todo lo que hacemos lo hacemos con amor. <br>
+                    Meraki es un emprendimiento familiar, comenzamos en 2022 como regalería y al día de hoy tenemos
+                    clientes
+                    que
+                    nos eligen por la calidad de nuestros productos, por nuestra buena atención y claro, por
+                    nuestros
+                    accesibles
+                    precios. <br>
+                    ¡Te esperamos en Meraki, contactate con nosotros!
+                </p>
+
+            </section>
+            </form>
+    </main>
+
+    <footer class="footer">
+        <div class="divfooter">
+            <img src="../img/ubicacion.png" alt="ubicacion" class="imgfooter">
+            <p class="foottext">Nos encontramos en calle 1122</p>
+        </div>
+        <div class="divfooter">
+            <img src="../img/instagram.png" alt="instagram" class="imgfooter">
+            <p class="foottext">Instagram</p>
+        </div>
+        <div class="divfooter">
+            <img src="../img/whatsapp.png" alt="whatsapp" class="imgfooter">
+            <p class="foottext">Whatsapp</p>
+        </div>
+    </footer>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/inicio.js"></script>
 
 </html>

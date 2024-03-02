@@ -679,4 +679,31 @@ option {
   padding: 10px 0 10px 10px;
 }
 
+.ingresar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.subtitulo-ingreso {
+  margin: auto;
+}
+
+.boton-ingresar {
+  width: fit-content;
+  margin: 9px auto;
+  border-radius: 25px;
+  font-size: 1.2vw;
+  transition: transform 0.1s linear;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  background-color: #4FA8C2;
+  padding: 0.8vh;
+}
+.boton-ingresar:hover {
+  background-color: #65c5e1;
+}
+
 /*# sourceMappingURL=styles.css.map */
