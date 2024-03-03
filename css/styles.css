@@ -108,6 +108,19 @@ li {
   padding-right: 15px;
 }
 
+.buscar-boton {
+  font-size: 16px;
+  background-color: #4FA8C2;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 0 0 10px;
+}
+.buscar-boton:hover {
+  transform: scale(1.1);
+  background-color: #65c5e1;
+}
+
 .card {
   border: 1.5px solid black;
   width: 15vw;
@@ -223,8 +236,9 @@ li {
 }
 
 #carrito {
-  display: "flex";
+  display: flex;
   position: fixed;
+  opacity: 0;
   bottom: 20%;
   top: 2.5vw;
   right: 14vw;
@@ -640,10 +654,11 @@ option {
   text-transform: uppercase;
   border: black solid 1px;
   border-radius: 25px;
-  padding: 5px;
+  padding: 8px;
 }
 .pago-confirmar button:hover {
   background-color: #65c5e1;
+  transform: scale(1.1);
 }
 
 .producto-en-carrito {
@@ -677,6 +692,17 @@ option {
   font-size: 30px;
   font-weight: 800;
   padding: 10px 0 10px 10px;
+}
+
+.pago-submit {
+  background-color: #4FA8C2;
+  color: white;
+  border-radius: 10px;
+  font-size: 19px;
+}
+.pago-submit:hover {
+  background-color: #65c5e1;
+  transform: scale(1.1);
 }
 
 .ingresar {

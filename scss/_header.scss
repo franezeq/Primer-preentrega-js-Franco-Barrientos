@@ -93,3 +93,15 @@ li{
     font-size: 20px;
     padding-right: 15px;
 }
+.buscar-boton{
+    font-size: 16px;
+    background-color: $celeste;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 0 0 10px;
+    &:hover{
+        transform: scale(1.1);
+        background-color: $celeste2;
+    }
+}

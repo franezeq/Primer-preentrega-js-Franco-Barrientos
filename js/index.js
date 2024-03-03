@@ -201,13 +201,20 @@ function agregarCards(products) {
     contenedorCards.appendChild(card);
   });
 }
-//local storage guardar y recuperrarr
+
+//imagen carro cargado
+const CARROCARGADOIMG= document.getElementById("list-item6");
+function CarroCargado(){
+  miCarrito.length >0? CARROCARGADOIMG.style.filter= "invert(100%)":CARROCARGADOIMG.style.filter= "invert(0%)";
+}
+//local storage guardar y recuperar
 function GuardarCarro() {
   localStorage.setItem("carrostring", JSON.stringify(miCarrito))
 }
 function RecuperarCarro() {
   miCarrito = JSON.parse(localStorage.getItem("carrostring")) || [];
   mostrarCarro();
+  CarroCargado();
 };
 
 //agregar al carro
@@ -225,15 +232,21 @@ function AgregarAlCarro(idProducto) {
     }
     GuardarCarro();
     mostrarCarro();
+    CarroCargado();
   }
 }
+
+
+
 //Eliminar del carro
 function EliminarDelCarro(idProducto) {
   const indice = miCarrito.findIndex(item => item.id === idProducto);
   if (indice !== -1) {
     miCarrito.splice(indice, 1);
     GuardarCarro();
+ 
     mostrarCarro();
+    CarroCargado();
   }
 }
 //carro renderizado con boton eliminar
@@ -262,6 +275,9 @@ function mostrarCarro() {
 
   })
   totalSpan.textContent = precioTotal;
+  CarroCargado();
+
+
 }
 
 }
@@ -270,10 +286,10 @@ function mostrarCarro() {
 let confirmar;
 function realizarCompra() {
   confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
-  total = totalSpan.textContent;
+  const TOTALENCARRO = miCarrito.length;
   miCarrito.length = 0;
   //REDIRECCIONA A PAGINA DE PAGO
-  if (confirmar == true && total > 0) {
+  if (confirmar == true && TOTALENCARRO >= 1) {
     window.location.href = "/html/pago.html";
   }
 }
@@ -294,6 +310,7 @@ contenedorCards.addEventListener('click', function (evento) {
 window.addEventListener("load", function Recargar() {
   RecuperarCarro();
   mostrarCarro();
+  CarroCargado()
 
 
 });
@@ -306,11 +323,18 @@ document.getElementById("cerrar-sesion").addEventListener("click", function Cerr
 //APARECE O DESAPARECE CARRRO
 document.getElementById("img-carrito").addEventListener("click", function() {
   const contenedorCarrito = document.getElementById('carrito');
-  if (contenedorCarrito.style.display === "none" || contenedorCarrito.style.display === "") {
-    contenedorCarrito.style.display = "block"; // Muestra el carrito
+  if (contenedorCarrito.style.opacity === "0" || contenedorCarrito.style.opacity === "") {
+    contenedorCarrito.style.opacity= "1"; //mostrar
+    contenedorCarrito.style.position= "fixed"
   } else {
-    contenedorCarrito.style.display = "none"; // Oculta el carrito
+    contenedorCarrito.style.opacity= "0"; //ESCONDER
+    contenedorCarrito.style.position= "relative"
+  
   }
 });
+
+//limpiar carro si se confirmo la compra
+const REINICIAR=localStorage.getItem("CompraRealizada");
+const condicion= REINICIAR? localStorage.clear() : ""; 
 
 

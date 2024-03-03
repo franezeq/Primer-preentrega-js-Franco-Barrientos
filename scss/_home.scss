@@ -116,8 +116,9 @@
 }
 
 #carrito {
-    display: "flex";
+    display: flex;
     position: fixed;
+    opacity: 0;
     bottom: 20%;
     top: 2.5vw;
     right: 14vw;

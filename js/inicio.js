@@ -43,14 +43,23 @@ window.addEventListener("load", function () {
     }
 })
 
-const MODAL=document.getElementById("inicio-dialog");
-const INICIAR = document.getElementById("iniciar-sesion");
-INICIAR.addEventListener("click", ()=>{
-    MODAL.showModal();
-});
+const MODAL = document.getElementById("inicio-dialog");
+//Añadir llamado
+const PARAINGRESO = document.getElementsByClassName("iniciar-sesion");
+Array.from(PARAINGRESO).forEach(boton => {
+    boton.addEventListener("click", () => {
+        MODAL.showModal();
+    });
+})
 
 const CERRAR = document.getElementById("inicio-cancelar");
-CERRAR.addEventListener("click", ()=>{
+CERRAR.addEventListener("click", () => {
     MODAL.close();
 });
-
+//Añadir llamado
+const RINGRESOS = document.getElementsByClassName("iniciar-sesion");
+Array.from(RINGRESOS).forEach(boton => {
+    boton.addEventListener("click", () => {
+        MODAL.showModal();
+    });
+})

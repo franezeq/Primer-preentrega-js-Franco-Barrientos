@@ -42,10 +42,11 @@
     text-transform: uppercase;
     border: black solid 1px;
     border-radius: 25px;
-    padding: 5px;
+    padding: 8px;
 
     &:hover{
         background-color: $celeste2;
+        transform: scale(1.1);
     }
 }
 .producto-en-carrito{
@@ -74,4 +75,15 @@
     font-size: 30px;
     font-weight: 800;
     padding: 10px 0 10px 10px;
+}
+.pago-submit{
+    background-color: $celeste;
+    color: white;
+    border-radius:10px;
+    font-size: 19px;
+    &:hover{
+        background-color: $celeste2;
+        transform: scale(1.1);
+
+    }
 }

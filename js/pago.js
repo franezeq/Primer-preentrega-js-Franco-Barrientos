@@ -47,5 +47,16 @@ const FINALIZARSWAL = Swal.mixin({
 const FINALIZAR= document.getElementById("finalizar");
 FINALIZAR.addEventListener("click",()=>{
     FINALIZARSWAL.fire();
-})
+    const OK= document.querySelector(".swal2-confirm");
 
+    OK.addEventListener("click",()=>{
+        window.location.href = "/index.html";
+        localStorage.setItem("CompraRealizada", "si");
+    })
+})
+//CERRAR SESION
+document.getElementById("cerrar-sesion").addEventListener("click", function CerrarSesion() {
+    localStorage.removeItem("logCorrecto");
+  
+    window.location.href = "/html/inicio.html";
+  });
