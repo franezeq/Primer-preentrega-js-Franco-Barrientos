@@ -1,3 +1,4 @@
+
 class Usuarios {
     constructor(usuario, contrasenia) {
         this.usuario = usuario;
@@ -20,8 +21,8 @@ const USER = document.getElementById("inicio-usuario");
 const PW = document.getElementById("inicio-pw")
 document.getElementById("validar").addEventListener('click', function IniciarSesion(event) {
     event.preventDefault();
-let user = USER.value;
-let pw = PW.value;
+    let user = USER.value;
+    let pw = PW.value;
     verificar = !!USUARIOS.find(persona => persona.usuario === user && persona.contrasenia === pw);
     if (verificar) {
         console.log("Bienvenido/a" + " " + user);
@@ -29,8 +30,8 @@ let pw = PW.value;
         window.location.href = "/index.html";
     }
     else {
-        const ERROR=document.getElementById("error");
-        ERROR.textContent= "Usuario y/o contraseña erroneos, por favor, reintente"
+        const ERROR = document.getElementById("error");
+        ERROR.textContent = "Usuario y/o contraseña erroneos, por favor, reintente"
 
     }
 
@@ -42,4 +43,14 @@ window.addEventListener("load", function () {
     }
 })
 
-const Swal = require('sweetalert2')
+const MODAL=document.getElementById("inicio-dialog");
+const INICIAR = document.getElementById("iniciar-sesion");
+INICIAR.addEventListener("click", ()=>{
+    MODAL.showModal();
+});
+
+const CERRAR = document.getElementById("inicio-cancelar");
+CERRAR.addEventListener("click", ()=>{
+    MODAL.close();
+});
+

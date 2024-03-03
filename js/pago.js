@@ -33,4 +33,19 @@ function mostrarDetallesCarro() {
 }
 
 // Llamar a la función al cargar la página
-document.addEventListener('DOMContentLoaded', mostrarDetallesCarro);
+document.addEventListener('DOMContentLoaded', mostrarDetallesCarro());
+
+//Finalizar compra (sweetAlert2)
+const FINALIZARSWAL = Swal.mixin({
+    title: "¿Estás seguro de que queres finalizar la compra?",
+    toast: true,
+    position: "center",
+    showConfirmButton: true,
+    showCancelButton: true,
+    
+  });
+const FINALIZAR= document.getElementById("finalizar");
+FINALIZAR.addEventListener("click",()=>{
+    FINALIZARSWAL.fire();
+})
+

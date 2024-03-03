@@ -16,7 +16,7 @@
                 <li class="textitem listItem2"><a href="#contacto">Contacto</a></li>
                 <li class="listItem3"><img src="../img/logopng.png" alt="Logo de Meraki" class="logohead"></li>
                 <li class="textitem listItem4"><a href="#quienes">Sobre nosotros</a></li>
-                <li class="textitem listItem5" id="cerrar-sesion">Cerrar sesión</li>
+                <li class="textitem listItem5" id="iniciar-sesion">iniciar sesión</li>
                 <li class="listItem6"><img src="../img/carrito.png" alt="Carrito de compras" class="carrito"
                         id="img-carrito"></li>
             </ul>
@@ -32,25 +32,27 @@
 
     <main>
 
-
-        <form action="" id="inicio-formulario">
-            <p>
-                <label for="inicio-usuario">
-                    <span>Usuario</span>
-                </label>
-                <input type="text" name="user" id="inicio-usuario" class="usuario">
-            </p>
-            <p>
-                <label for="inicio-pw">
-                    <span>Contraseña:</span>
-                </label>
-                <input type="text" name="inicio pw" id="inicio-pw" class="pw">
-            </p>
-            <p id="error"></p>
-            <p>
-                <button type="submit" id="validar">Ingresar</button>
-            </p>
-        </form>
+      <dialog id="inicio-dialog">
+            <form action="" id="inicio-formulario">
+                <p class="inicio-form-hijo">
+                    <label for="inicio-usuario">
+                        <span>Usuario:</span>
+                    </label>
+                    <input type="text" name="user" id="inicio-usuario" class="usuario inicio-input">
+                </p>
+                <p class="inicio-form-hijo">
+                    <label for="inicio-pw">
+                        <span>Contraseña:</span>
+                    </label>
+                    <input type="text" name="inicio pw" id="inicio-pw" class="pw inicio-input">
+                </p>
+                <p id="error"></p>
+                <p class="inicio-form-hijo">
+                    <button type="submit" id="validar" class="inicio-form-bot">Ingresar</button>
+                    <button type="button" id="inicio-cancelar" class="inicio-form-bot">Cancelar</button>
+                </p>
+            </form>
+        </dialog>
 
         <h1 class="titulo">Bienvenido a Meraki</h1>
         <figure class="img-principal-padre">
@@ -113,7 +115,7 @@
         </section>
         <div class="ingresar">
             <h3 class="subtitulo-ingreso">Ingresar como usuario para ver todos los productos</h3>
-            <button value="ingresar!" type="button" class="boton-ingresar">Ingresar a Meraki</button>
+            <button value="ingresar" type="button" class="boton-ingresar">Ingresar a Meraki</button>
         </div>
 
 
@@ -205,9 +207,9 @@
             <p class="foottext">Whatsapp</p>
         </div>
     </footer>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/inicio.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/inicio.js"></script>
+</body>
 
 </html>
