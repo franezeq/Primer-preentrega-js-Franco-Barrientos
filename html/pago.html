@@ -27,24 +27,24 @@
     <body>
         <h1 class="titulo-pago">Realizar mi compra</h1>
         <div class="pago-realizar-compra">
-            <form class="pago-formularios">
+            <form class="pago-formularios" id="formulario-pago">
                 <p>
                     <label for="datos-nombre">
                         <span>Nombre y Apellido:</span>
                     </label>
-                    <input type="text" name="nombre" id="datos-nombre" class="pago-input" minlength="10" required>
+                    <input type="text" name="nombre" id="datos-nombre" class="pago-input" minlength="4" required>
                 </p>
                 <p>
                     <label for="datos-direccion">
                         <span>Direccion:</span>
                     </label>
-                    <input type="text" name="direccion" id="datos-direccion" class="pago-input" required>
+                    <input type="text" name="direccion" id="datos-direccion" class="pago-input" minlength="4" required>
                 </p>
                 <p>
                     <label for="datos-telefono">
                         <span>Numero de telefono:</span>
                     </label>
-                    <input type="number" name="telefono" id="datos-telefono" class="pago-input" required>
+                    <input type="number" name="telefono" id="datos-telefono" class="pago-input" minlength="5" required>
                 </p>
 
 
@@ -82,7 +82,7 @@
                         </select>
                     </label>
                 </p>
-                <p><button type="submit" class="pago-submit" id="finalizar">Finalizar</button></p>
+                <p><button type="submit" value="validar" class="pago-submit" id="finalizar">Finalizar</button></p>
 
 
             </form>
