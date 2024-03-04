@@ -192,7 +192,9 @@
     margin: auto;
 
 }
-
+.invisible{
+    display: none;
+}
 /*Animacion Carro*/
 @keyframes aparece-el-carro {
     from {

@@ -134,18 +134,6 @@ console.log(mateRojo); //Stock Mate Rojo con 1 unidad venidida
 
 
 
-// FILTRO DE BUSQUEDA PARA INPUT
-
-const search = (letra) => {
-  return PRODUCTOS.filter(item => {
-    return item.titulo.toLowerCase().includes(letra.toLowerCase())
-  })
-
-
-}
-
-const buscadorFuncional = document.getElementById("buscar");
-buscadorFuncional.addEventListener("input", () => console.log(search(buscadorFuncional.value)));
 
 // ORDENAR DE MAYOR A MENOR PARA FILTRO DE BUSQUEDA
 PRODUCTOS.sort(function (a, b) {
@@ -201,6 +189,17 @@ function agregarCards(products) {
     contenedorCards.appendChild(card);
   });
 }
+//BUSCADOR FUNCIONAL
+
+document.addEventListener("keyup", (e)=>{
+  if(e.target.matches("#buscar")){
+    document.querySelectorAll(".card").forEach(encontrado=>{
+      encontrado.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+      ?encontrado.classList.remove("invisible")
+      :encontrado.classList.add("invisible")
+    })
+  }
+})
 
 //imagen carro cargado
 const CARROCARGADOIMG= document.getElementById("list-item6");
@@ -325,10 +324,11 @@ document.getElementById("img-carrito").addEventListener("click", function() {
   const contenedorCarrito = document.getElementById('carrito');
   if (contenedorCarrito.style.opacity === "0" || contenedorCarrito.style.opacity === "") {
     contenedorCarrito.style.opacity= "1"; //mostrar
-    contenedorCarrito.style.position= "fixed"
+    contenedorCarrito.style.display= "flex"
   } else {
-    contenedorCarrito.style.opacity= "0"; //ESCONDER
-    contenedorCarrito.style.position= "relative"
+    contenedorCarrito.style.display="none" //ESCONDER
+    contenedorCarrito.style.opacity="0"
+    
   
   }
 });
