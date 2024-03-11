@@ -190,7 +190,6 @@ function agregarCards(products) {
   });
 }
 //BUSCADOR FUNCIONAL
-
 document.addEventListener("keyup", (e)=>{
   if(e.target.matches("#buscar")){
     document.querySelectorAll(".card").forEach(encontrado=>{
@@ -250,13 +249,13 @@ function EliminarDelCarro(idProducto) {
 }
 //carro renderizado con boton eliminar
 function mostrarCarro() {
+  let precioTotal = 0;
   //MOSTRAR MENSAJE CUANDO EL CARRO ESTA VACIO
   if (miCarrito.length === 0) {
     contenedorElementosCarrito.textContent = "Tu carrito está vacío";
 } else {
  // MOSTRAR LOS PRODUCTOS CUANDO LOS TENGA
   contenedorElementosCarrito.innerHTML = '';
-  let precioTotal = 0;
 
   miCarrito.forEach(item => {
     const li = document.createElement('li');
@@ -273,12 +272,11 @@ function mostrarCarro() {
     precioTotal += item.precioConIva * item.cantidad;
 
   })
-  totalSpan.textContent = precioTotal;
+
   CarroCargado();
 
 
-}
-
+}totalSpan.textContent = precioTotal;
 }
 
 

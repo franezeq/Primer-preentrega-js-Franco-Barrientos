@@ -1,3 +1,48 @@
+
+@media (min-width: 1550px) and (max-width: 2084px) {
+#btn-comprar{
+    width: fit-content;
+    align-self: center;
+}
+#img-carrito{
+    width: 40px;
+    height: 40px;
+}
+
+}
+@media (min-width: 991px) and (max-width: 1549px){
+    li.texto-carro{
+        font-size: 15px;
+    }
+    #carrito.carro{
+        width: 200px;
+        max-width: fit-content;
+    }
+    #inicio-formulario{
+        height: 10px;
+        max-height: fit-content;
+    }
+    #inicio-formulario p{
+      font-size: 15px;
+    }
+    #inicio-formulario input{
+        font-size: 15px;
+        margin: 0px;
+        padding: 0;
+      }
+      #inicio-formulario button{
+        font-size: 15px;
+        margin: 1px;
+        padding: 0;
+        width: fit-content;
+      }
+      #inicio-dialog{
+        width: max-content;
+        height: max-content;
+      }
+   
+
+}
 @media (min-width: 425px) and (max-width: 990px) {
     .padrelist {
         font-size: 11px;
@@ -50,6 +95,47 @@
         width: 60px;
         height: auto;
     }
+    li.texto-carro{
+        font-size: 15px;
+    }
+    #carrito.carro{
+        width: 200px;
+        max-width: fit-content;
+    }
+    .padrelist{
+        font-size: 16px;
+        margin: 0 10px;
+
+    }
+    #img-carrito{
+        width: 50px;
+    }
+    .buscador{
+        margin: 0 40px;
+        font-size: 20px;
+    }
+    .whatsapp{
+        bottom: 30px;
+        right: 30px;
+    }
+    #inicio-formulario{
+        height: 50px;
+        max-height: fit-content;
+    }
+    #inicio-formulario p{
+      font-size: 10px;
+    }
+    #inicio-formulario input{
+        font-size: 15px;
+        margin: 0px;
+        padding: 0;
+      }
+      #inicio-formulario button{
+        font-size: 15px;
+        margin: 1px;
+        padding: 0;
+        width: fit-content;
+      }
 }
 
 
@@ -183,4 +269,37 @@
         height: auto;
         object-fit: contain;
     }
+    #img-carrito{
+        width: 50px;
+    }
+    .buscador{
+        margin: 0 40px;
+        font-size: 20px;
+    }
+    .whatsapp{
+        bottom: 30px;
+        right: 30px;
+    }
+    .whatsapp {
+        width: 60px;
+        height: auto;
+    }
+    li.texto-carro{
+        font-size: 15px;
+    }
+    #carrito.carro{
+        width: 200px;
+        max-width: fit-content;
+    }
+    .padrelist{
+        font-size: 14px;
+        margin: 0 10px;
+
+    }
+    .textoBuscador{
+        font-size: 14px;
+    }
+
+
+
 }
