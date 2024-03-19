@@ -820,6 +820,14 @@ option {
   transform: scale(1.1);
 }
 
+.card-grid-padre {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 30px auto;
+  justify-items: center;
+  contain: content;
+}
+
 .ingresar {
   display: flex;
   flex-direction: column;

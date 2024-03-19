@@ -49,8 +49,10 @@ const getUsuarios = async () => {
             }
         }
     }
-    const INICIAR = document.getElementById("iniciar-sesion");
-    INICIAR.addEventListener("click", MostrarAlerta);
+    const INICIAR = document.getElementsByClassName("iniciar-sesion");
+    Array.from(INICIAR).forEach(boton => {
+        boton.addEventListener("click", MostrarAlerta);
+    });
 }
 getUsuarios();
 
