@@ -1,3 +1,5 @@
+
+
 function RecuperarCarro() {
     return JSON.parse(localStorage.getItem("carrostring")) || [];
 }
@@ -13,12 +15,12 @@ function mostrarDetallesCarro() {
         productoDiv.classList.add('producto-en-carrito');
         // Crear elemento de imagen y establecer su src y alt
         const imagen = document.createElement('img');
-        imagen.src = producto.imagen;
+        imagen.src = producto.img;
         imagen.alt = producto.alt;
         imagen.classList.add('imagen-producto-en-carrito');
 
         const detalles = document.createElement('p');
-        detalles.textContent = `${producto.titulo} - Cantidad: ${producto.cantidad} - Precio: $${producto.precioConIva}`;
+        detalles.textContent = `${producto.titulo} - Cantidad: ${producto.cantidad} - Precio: $${producto.precio*producto.cantidad}`;
 
         // Agregar imagen y la lista del carro
         productoDiv.appendChild(imagen);
@@ -26,10 +28,10 @@ function mostrarDetallesCarro() {
 
         contenedorDetalles.appendChild(productoDiv);
 
-        total += producto.precioConIva * producto.cantidad;
+        total += producto.precio * producto.cantidad;
     });
 
-    document.getElementById('total-a-pagar').textContent = total.toFixed(2);
+    document.getElementById('total-a-pagar').textContent = "$"+ total.toFixed(2);
 }
 
 // Llamar a la función al cargar la página
