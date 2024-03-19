@@ -1,21 +1,13 @@
-
-class Usuarios {
-    constructor(usuario, contrasenia) {
-        this.usuario = usuario;
-        this.contrasenia = contrasenia;
-    }
-}
-
-const USUARIOS = [
-    franco = new Usuarios("franco", "entrar"),
-    mica = new Usuarios("mica", "mika")
-]
-console.log(USUARIOS);
-/*
-let user;
-let pw;
-*/
+//ASINCRONIA PARA USUARIOS
+let validacion;
 let verificar;
+const getUsuarios = async () => {
+  const respuesta = await fetch("/usuarios.json");
+  validacion = await respuesta.json();
+
+
+
+
 
 
 
@@ -43,7 +35,7 @@ async function MostrarAlerta() {
         }
     });
     if (formValues) {
-        const verificar = USUARIOS.some(persona => persona.usuario === formValues[0] && persona.contrasenia === formValues[1]); //VALIDAR DATOS DE INICIO
+        const verificar = validacion.some(persona => persona.usuario === formValues[0] && persona.contrasenia === formValues[1]); //VALIDAR DATOS DE INICIO
         if (verificar) {
             console.log("Bienvenido/a " + formValues[0]);
             localStorage.setItem("logCorrecto", true);
@@ -57,6 +49,7 @@ async function MostrarAlerta() {
         }
     }
 }
-
 const INICIAR = document.getElementById("iniciar-sesion");
 INICIAR.addEventListener("click", MostrarAlerta);
+}
+getUsuarios();
