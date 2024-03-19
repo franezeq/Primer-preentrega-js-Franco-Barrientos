@@ -85,8 +85,9 @@
 /*GRILLA CARDS*/
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 30px 15%;
+    grid-template-columns: repeat(3, 2fr);
+    margin: 30px auto;
+    grid-column-start: 2;
 }
 
 /*HOME*/
