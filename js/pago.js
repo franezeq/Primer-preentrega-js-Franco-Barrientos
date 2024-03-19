@@ -38,14 +38,26 @@ function mostrarDetallesCarro() {
 document.addEventListener('DOMContentLoaded', mostrarDetallesCarro());
 
 //Finalizar compra (sweetAlert2)
-const FINALIZARSWAL = Swal.mixin({
-    title: "¿Estás seguro de que queres finalizar la compra?",
-    toast: true,
-    position: "center",
-    showConfirmButton: true,
-    showCancelButton: true,
-
-});
+// const FINALIZARCOMPRA=document.getElementById("finalizar");
+// FINALIZARCOMPRA.addEventListener("click",()=>
+// Swal.fire({
+//     title: "Querés finalizar tu compra?",
+//     icon: "warning",
+//     showCancelButton: true,
+//     confirmButtonColor: "#3085d6",
+//     cancelButtonColor: "#d33",
+//     confirmButtonText: "Si"
+//   }).then((result) => {
+//     if (result.isConfirmed) {
+//       Swal.fire({
+//         title: "Redireccionando",
+//         icon: "success"
+//       });
+//       window.location.href = "/index.html";
+//     }
+  
+//   })
+//   )
 const REVISATUSDATOS = Swal.mixin({
     title: "Datos incorrectos",
     toast: true,
@@ -82,7 +94,23 @@ document.getElementById('formulario-pago').addEventListener('submit', function (
     if (formularioEsValido) {
         const FINALIZAR = document.getElementById("finalizar");
         FINALIZAR.addEventListener("click", () => {
-            FINALIZARSWAL.fire();
+            Swal.fire({
+                title: "Querés finalizar tu compra?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire({
+                    title: "Redireccionando",
+                    icon: "success"
+                  });
+                  window.location.href = "/index.html";
+                }
+              
+              })
             const OK = document.querySelector(".swal2-confirm");
 
             OK.addEventListener("click", () => {

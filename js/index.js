@@ -184,7 +184,7 @@ const getData = async () => {
       contenedorCards.appendChild(card);
     });
   }
-  
+
   //agregar al carro
   function AgregarAlCarro(idProducto) {
     const itemExistente = miCarrito.find(item => item.id === idProducto);
@@ -206,18 +206,37 @@ const getData = async () => {
 
 
 
- 
-  
+
+
 
   let confirmar;
+
   function realizarCompra() {
-    confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
     const TOTALENCARRO = miCarrito.length;
     miCarrito.length = 0;
-    //REDIRECCIONA A PAGINA DE PAGO
-    if (confirmar == true && TOTALENCARRO >= 1) {
-      window.location.href = "/html/pago.html";
-    }
+    //confirmar = confirm("Esta seguro de realizar una compra por $" + totalSpan.textContent + " ?");
+    Swal.fire({
+      title: "Estas seguro de realizar una compra por $" + totalSpan.textContent + " ?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si"
+    }).then((result) => {
+      if (result.isConfirmed && TOTALENCARRO >= "1" ) {
+        Swal.fire({
+          title: "Redireccionando",
+          icon: "success"
+        });
+        window.location.href = "/html/pago.html";
+      }
+    
+    });
+
+    // //REDIRECCIONA A PAGINA DE PAGO
+    // if (confirmar == true && TOTALENCARRO >= 1) {
+    //   window.location.href = "/html/pago.html";
+    // }
   }
   agregarCards(data);
   document.getElementById('btn-comprar').addEventListener('click', realizarCompra);
@@ -274,8 +293,8 @@ function mostrarCarro() {
 
   } totalSpan.textContent = precioTotal;
 }
- //Eliminar del carro
- function EliminarDelCarro(idProducto) {
+//Eliminar del carro
+function EliminarDelCarro(idProducto) {
   const indice = miCarrito.findIndex(item => item.id === idProducto);
   if (indice !== -1) {
     miCarrito.splice(indice, 1);
@@ -320,7 +339,10 @@ function CarroCargado() {
 document.getElementById("cerrar-sesion").addEventListener("click", function CerrarSesion() {
   localStorage.removeItem("logCorrecto");
 
+  localStorage.setItem("cerrar", "sesion cerrada"); //para agregar alerta toastify
+
   window.location.href = "/html/inicio.html";
+
 });
 //APARECE O DESAPARECE CARRRO
 document.getElementById("img-carrito").addEventListener("click", function () {
@@ -341,3 +363,16 @@ const REINICIAR = localStorage.getItem("CompraRealizada");
 const condicion = REINICIAR ? localStorage.clear() : "";
 
 
+//toastify
+let logtoast = localStorage.getItem("logCorrecto");
+if (logtoast === "true") {
+  Toastify({
+
+    text: "Iniciaste sesión con éxito",
+
+    duration: 3000
+
+  }).showToast();
+
+  localStorage.clear();
+}
